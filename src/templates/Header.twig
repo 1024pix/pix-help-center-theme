@@ -1,53 +1,53 @@
 {% if  portal.current_page != 'csat_survey' %}
-    <header class="pix-banner">
-        <div class="pix-banner__brand">
-            {{ portal | logo }}
-            <div class="pix-banner-brand__splitter"></div>
-            <div class="pix-banner-brand__title">Centre d'assistance</div>
+  <header class="pix-banner">
+    <div class="pix-banner__brand">
+      {{ portal | logo }}
+      <div class="pix-banner-brand__splitter"></div>
+      <div class="pix-banner-brand__title">Centre d'assistance</div>
+    </div>
+    <nav class="pix-banner__nav">
+      {{ portal | helpcenter_navigation }}
+      {{ portal | welcome_navigation }}
+    </nav>
+  </header>
+  <!-- Search and page links for the page -->
+  {% if portal.current_tab and portal.current_tab == "home" %}
+    <div class="pix-hero-banner">
+      <section class="pix-hero-banner__search-bar">
+        <div class="hc-search">
+          <h2 class="heading hide-in-mobile">{% translate header.help_center %}</h2>
+          <div class="hc-search-c">
+            {% snippet search_form %}
+          </div>
         </div>
-        <nav class="pix-banner__nav">
-            {{ portal | helpcenter_navigation }}
-            {{ portal | welcome_navigation }}
-        </nav>
-    </header>
-    <!-- Search and page links for the page -->
-    {% if portal.current_tab and portal.current_tab == "home" %}
-        <div class="pix-hero-banner">
-            <section class="pix-hero-banner__search-bar">
-                <div class="hc-search">
-                    <h2 class="heading hide-in-mobile">{% translate header.help_center %}</h2>
-                    <div class="hc-search-c">
-                        {% snippet search_form %}
-                    </div>
-                </div>
-            </section>
-        </div>
-    {% endif %}
+      </section>
+    </div>
+  {% endif %}
 
-    {% if portal.current_tab and portal.current_tab != "home" %}
-        <nav class="page-tabs">
-            <div class="page no-padding {% if portal.is_not_login_page %}no-header-tabs{% endif %}">
-                {% if portal.tabs.size > 0 %}
-                    <a data-toggle-dom="#header-tabs" href="#" data-animated="true" class="mobile-icon-nav-menu show-in-mobile"></a>
-                    <div class="nav-link" id="header-tabs">
-                        {% for tab in portal.tabs %}
-                            {% if tab.url %}
-                                <a href="{{tab.url}}" class="{% if tab.tab_type == portal.current_tab %}active{% endif %}">{{ tab.label }}</a>
-                            {% endif %}
-                        {% endfor %}
-                    </div>
-                {% endif %}
-            </div>
-        </nav>
-    {% endif %}
+  {% if portal.current_tab and portal.current_tab != "home" %}
+    <nav class="page-tabs">
+      <div class="page no-padding {% if portal.is_not_login_page %}no-header-tabs{% endif %}">
+        {% if portal.tabs.size > 0 %}
+          <a data-toggle-dom="#header-tabs" href="#" data-animated="true" class="mobile-icon-nav-menu show-in-mobile"></a>
+          <div class="nav-link" id="header-tabs">
+            {% for tab in portal.tabs %}
+              {% if tab.url %}
+                <a href="{{tab.url}}" class="{% if tab.tab_type == portal.current_tab %}active{% endif %}">{{ tab.label }}</a>
+              {% endif %}
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    </nav>
+  {% endif %}
 
 {% else %}
-    <header class="banner">
-        <div class="banner-wrapper">
-            <div class="banner-title">
-                {{ portal | logo : true }}
-                <h1 class="ellipsis heading">{{portal.name|h}}</h1>
-            </div>
-        </div>
-    </header>
+  <header class="banner">
+    <div class="banner-wrapper">
+      <div class="banner-title">
+        {{ portal | logo : true }}
+        <h1 class="ellipsis heading">{{portal.name|h}}</h1>
+      </div>
+    </div>
+  </header>
 {% endif %}

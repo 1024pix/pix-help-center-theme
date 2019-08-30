@@ -1,0 +1,19 @@
+{% if portal.has_solutions %}
+    <section class="main pix-section-card__container" id="solutions-index-home">
+        <!--    <h2 class="heading">{% translate portal.knowledge_base %}</h2>-->
+        {% for category in portal.solution_categories %}
+            {% if category.folders_count > 0 %}
+                <section class="pix-section-card">
+                    <div class="pix-section-card__title">
+                        {{ category.name | link_to: category.url }}
+                    </div>
+                    <div class="pix-section-card__description">
+                        {{ category.description }}
+                    </div>
+                </section>
+            {% else %}
+                {{ portal | filler_for_solutions }}
+            {% endif %}
+        {% endfor %}
+    </section>
+{% endif %}

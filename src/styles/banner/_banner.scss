@@ -1,5 +1,61 @@
-.pix {
-  .test {
-    color: #000;
+.pix-banner {
+  padding-left: 10px;
+  padding-right: 10px;
+  position: absolute;
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 14px;
+
+  &__brand {
+    margin-left: 10px;
+    float: left;
+    height: 40px;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
   }
+
+  &__splitter {
+    width: 1px;
+    border-left: 1px solid #FFFFFF;
+    height: 40px;
+    margin: 0 10px;
+  }
+
+  &__nav {
+    float: right;
+    display: none;
+    align-items: center;
+    height: 40px;
+    display: flex;
+
+    &.welcome {
+      display: none;
+    }
+  }
+}
+
+.pix-banner-brand__title {
+  color: #FFFFFF;
+  font-size: 20px;
+}
+
+.pix-banner__nav nav {
+  display: flex;
+}
+
+.pix-banner__nav a {
+  font-weight: 700;
+  display: inline-block;
+  border: 2px solid #FFFFFF;
+  color: #FFFFFF;
+  line-height: 38px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  padding: 0 15px;
+  box-sizing: border-box;
 }

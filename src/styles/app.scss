@@ -1,8 +1,65 @@
 @import 'banner/banner';
 
-.pix {
+.pix-hero-banner {
+  background: #2986BE;
+  background-image: linear-gradient(135deg,#388AFF 0,#985FFF 100%);
+  background-size: cover;
+  background-position: center bottom;
+  justify-content: center;
+  padding-top: 65px;
+  height: 450px;
+}
 
-  &-banner {
-    background: green;
-  }
+.pix-hero-banner__search-bar {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  text-align: center;
+}
+
+.pix-section-card__container {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+
+.pix-section-card {
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 33.0%;
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 1px;
+  margin-top: 1px;
+  background-color: #F4F7FA;
+  min-height: 300px;
+  text-align: center;
+  transition: all 170ms;
+}
+
+.pix-section-card:hover {
+  transform: scale(1.075) rotate(0.0001deg);
+  background-color: #FFFFFF;
+  box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.15);
+}
+
+.pix-section-card__title {
+  color: #1d1c1d;
+  font-size: 24px;
+  line-height: 30px;
+  margin-top: 20px;
+}
+
+.pix-wrapper {
+  background-color: #F4F7FA;
+  width: 70%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.pix-page {
+  width: 100%;
+  background-color: #F4F7FA;
 }
