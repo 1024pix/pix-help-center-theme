@@ -5,41 +5,42 @@
       <div class="pix-banner-brand__splitter"></div>
       <div class="pix-banner-brand__title">Centre d'assistance</div>
     </div>
-    <nav class="pix-banner__nav">
-      {{ portal | helpcenter_navigation }}
-      {{ portal | welcome_navigation }}
-    </nav>
   </header>
-  <!-- Search and page links for the page -->
-  {% if portal.current_tab and portal.current_tab == "home" %}
-    <div class="pix-hero-banner">
+
+  <div class="pix-hero-banner">
+    {% if portal.current_tab and portal.current_tab == "home" %}
       <section class="pix-hero-banner__search-bar">
         <div class="hc-search">
-          <h2 class="heading hide-in-mobile">{% translate header.help_center %}</h2>
+          <h2 class="heading hide-in-mobile">Bonjour. Pouvons-nous vous aider ?</h2>
           <div class="hc-search-c">
             {% snippet search_form %}
           </div>
         </div>
       </section>
-    </div>
-  {% endif %}
-
-  {% if portal.current_tab and portal.current_tab != "home" %}
-    <nav class="page-tabs">
-      <div class="page no-padding {% if portal.is_not_login_page %}no-header-tabs{% endif %}">
-        {% if portal.tabs.size > 0 %}
-          <a data-toggle-dom="#header-tabs" href="#" data-animated="true" class="mobile-icon-nav-menu show-in-mobile"></a>
-          <div class="nav-link" id="header-tabs">
-            {% for tab in portal.tabs %}
-              {% if tab.url %}
-                <a href="{{tab.url}}" class="{% if tab.tab_type == portal.current_tab %}active{% endif %}">{{ tab.label }}</a>
-              {% endif %}
-            {% endfor %}
-          </div>
-        {% endif %}
+    {% elsif portal.current_tab == "solutions" %}
+      <div class="pix-hero-banner__category">
+        <h2 class="pix-hero-banner-category__title">{{ category.name | h}}</h2>
+        <p class="pix-hero-banner-category__description">{{ category.description | h}}</p>
       </div>
-    </nav>
-  {% endif %}
+      <div class="pix-hero-banner__category-nav">
+        <ul>
+          {% for category in portal.solution_categories %}
+            <li>
+              {{ category.name | link_to: category.url }}
+              <ul class="pix-hero-banner-category-nav__subnav">
+                {% for folder in category.folders %}
+                  <li>{{ folder | link_to_folder_with_count }}</li>
+                {% endfor %}
+              </ul>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+
+  </div>
+  {{ portal.current_tab }}
+  {{ portal.current_page }}
 
 {% else %}
   <header class="banner">
