@@ -1,11 +1,22 @@
 {% if  portal.current_page != 'csat_survey' %}
-  <header class="pix-banner">
-    <div class="pix-banner__brand">
-      {{ portal | logo }}
-      <div class="pix-banner-brand__splitter"></div>
-      <div class="pix-banner-brand__title">Centre d'assistance</div>
-    </div>
-  </header>
+  {% if portal.current_page and portal.current_tab == "home" %}
+    <header class="pix-banner">
+      <div class="pix-banner__brand">
+        {{ portal | logo }}
+        <div class="pix-banner-brand__splitter"></div>
+        <div class="pix-banner-brand__title">Centre d'assistance</div>
+      </div>
+    </header>
+  {% else %}
+    <header class="pix-banner pix-banner--fixed">
+      <div class="pix-banner__brand">
+        <a class="pix-banner-brand__logo" href="/"></a>
+        <div class="pix-banner-brand__splitter pix-banner-brand__splitter--black"></div>
+        <div class="pix-banner-brand__title pix-banner-brand__title--black">Centre d'assistance</div>
+      </div>
+    </header>
+  {% endif %}
+
 
   <div class="pix-hero-banner">
     {% if portal.current_tab and portal.current_tab == "home" %}
