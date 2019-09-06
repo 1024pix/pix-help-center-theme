@@ -1,4 +1,5 @@
 @import 'banner/banner';
+@import 'solutions-category-home';
 
 .pix-hero-banner {
   background: #2986BE;
@@ -182,9 +183,13 @@
 
 .pix-wrapper {
   background-color: #F4F7FA;
-  width: 70%;
+  width: 90%;
   margin-right: auto;
   margin-left: auto;
+
+  @media (min-width: 700px) {
+    width: 70%;
+  }
 }
 
 .pix-page {

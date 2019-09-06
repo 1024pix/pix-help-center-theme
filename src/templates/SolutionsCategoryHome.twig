@@ -1,23 +1,18 @@
-<section class="main content rounded-6 min-height-on-desktop fc-solution-category" id="solutions-category-{{ category.id }}">
-  <div class="cs-g-c">
+<section class="solution-category-home" id="solutions-category-{{ category.id }}">
+  <div class="">
     {% for folder in category.folders %}
       {% if folder.articles_count > 0 %}
-        <section class="cs-g article-list">
-          <div class="solution-category__title">
+        <section class="solution-category-home__category">
+          <div class="solution-category-home__title">
             {{ folder | link_to_folder_with_count }}
           </div>
-          <ul>
-            {% for article in folder.articles limit:5 %}
-              <li>
-                <div class="ellipsis">
-                  <a href="{{article.url}}" title="{{article.title | h}}">{{article.title |h}}</a>
-                </div>
+          <ul class="solution-category-home__list">
+            {% for article in folder.articles %}
+              <li class="solution-category-home-list__article">
+                <a href="{{article.url}}" title="{{article.title | h}}">{{article.title |h}}</a>
               </li>
             {% endfor %}
           </ul>
-          {% if folder.articles.size > 5 %}
-            {{ folder | link_to_see_all_articles }}
-          {% endif %}
         </section>
       {% endif %}
     {% endfor %}
