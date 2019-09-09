@@ -23,12 +23,34 @@
   vertical-align: top;
   margin-bottom: 1px;
   margin-top: 1px;
-  background-color: #F4F7FA;
+  background-color: #ffffff;
   min-height: 300px;
   min-width: 300px;
   text-align: center;
   transition: all 170ms;
   z-index: 1;
+
+  &__title {
+    color: #1d1c1d;
+    font-size: 24px;
+    line-height: 30px;
+    margin-top: 20px;
+  }
+
+  &__icon {
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+
+    &--premiers-pas {
+      background-image: url(https://pix.fr/images/pix-logo.svg);
+    }
+  }
+
 }
 
 .pix-section-card:hover {
@@ -38,11 +60,4 @@
   text-decoration: none;
   color: #1d1c1d;
   z-index: 2;
-}
-
-.pix-section-card__title {
-  color: #1d1c1d;
-  font-size: 24px;
-  line-height: 30px;
-  margin-top: 20px;
 }

@@ -3,7 +3,8 @@
         <!--    <h2 class="heading">{% translate portal.knowledge_base %}</h2>-->
         {% for category in portal.solution_categories %}
             {% if category.folders_count > 0 %}
-                <a class="pix-section-card" href="{{category.url}}">
+                <a class="pix-section-card" href="{{category.url}}" id="{{ category.name | downcase | replace: " ", "-" }}">
+                    <div class="pix-section-card__icon pix-section-card__icon--{{ category.name | downcase | replace: " ", "-" }}"></div>
                     <div class="pix-section-card__title">
                         {{ category.name }}
                     </div>
