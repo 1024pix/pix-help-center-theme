@@ -22,6 +22,19 @@
     display: flex;
     align-items: center;
   }
+
+  &__search-bar {
+    width: 350px;
+    position: absolute;
+    right: 150px;
+    border: 2px solid #e3e3e3;
+    border-radius: 6px;
+    padding: 1px;
+
+    &>.hc-search-form > .hc-search-input input, .hc-search-button .btn {
+      height: 35px;
+    }
+  }
 }
 
 .pix-banner-brand {
