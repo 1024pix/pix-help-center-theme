@@ -3,14 +3,14 @@
         <!--    <h2 class="heading">{% translate portal.knowledge_base %}</h2>-->
         {% for category in portal.solution_categories %}
             {% if category.folders_count > 0 %}
-                <section class="pix-section-card">
+                <a class="pix-section-card" href="{{category.url}}">
                     <div class="pix-section-card__title">
-                        {{ category.name | link_to: category.url }}
+                        {{ category.name }}
                     </div>
                     <div class="pix-section-card__description">
                         {{ category.description }}
                     </div>
-                </section>
+                </a>
             {% else %}
                 {{ portal | filler_for_solutions }}
             {% endif %}
