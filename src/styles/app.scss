@@ -25,6 +25,7 @@
   text-align: left;
   margin-top: 50px;
   padding-bottom: 20px;
+  padding-left: 15px;
   width: 70%;
   margin-left: auto;
   margin-right: auto;
@@ -32,17 +33,38 @@
 
 .pix-hero-banner__category-nav {
   max-width: 960px;
-  padding: 0px 10px;
-  margin: 0px auto;
+  padding: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
 
   &>ul {
     list-style: none;
+    margin: 5px 0;
 
     &>li {
       display: inline-block;
 
       &:hover .pix-hero-banner-category-nav__subnav {
           display: block;
+      }
+
+      &.active {
+        background-color: #ffffff;
+        color: #2C2D30;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+
+        & a {
+          color: #2C2D30;
+        }
+
+        &:hover {
+          background-color: #ffffff;
+          color: #2C2D30;
+          border-top-left-radius: 4px;
+          border-top-right-radius: 4px;
+        }
       }
 
       &:hover {
@@ -140,7 +162,7 @@
 }
 
 .pix-wrapper {
-  background-color: #F4F7FA;
+  background-color: #ffffff;
   width: 90%;
   margin-right: auto;
   margin-left: auto;
@@ -152,7 +174,7 @@
 
 .pix-page {
   width: 100%;
-  background-color: #F4F7FA;
+  background-color: #ffffff;
 }
 
 .solution-category__title a {

@@ -38,24 +38,29 @@
       </div>
       <div class="pix-hero-banner__category-nav">
         <ul>
+          {% assign categoryName = category.name %}
+          {% if portal.current_page == "article_view" %}
+            {% assign categoryName = article.category.name %}
+          {% endif %}
           {% for category in portal.solution_categories %}
-            <li>
-              {{ category.name | link_to: category.url }}
-              <ul class="pix-hero-banner-category-nav__subnav">
-                {% for folder in category.folders %}
-                  <li>{{ folder | link_to_folder_with_count }}</li>
-                {% endfor %}
-              </ul>
-            </li>
+            {% if categoryName == category.name %}
+              <li class="active">
+            {%  else %}
+              <li>
+            {%  endif %}
+                {{ category.name | link_to: category.url }}
+                <ul class="pix-hero-banner-category-nav__subnav">
+                  {% for folder in category.folders %}
+                    <li>{{ folder | link_to_folder_with_count }}</li>
+                  {% endfor %}
+                </ul>
+              </li>
           {% endfor %}
         </ul>
       </div>
     {% endif %}
 
   </div>
-  {{ portal.current_tab }}
-  {{ portal.current_page }}
-
 {% else %}
   <header class="banner">
     <div class="banner-wrapper">
