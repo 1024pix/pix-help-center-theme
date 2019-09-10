@@ -26,11 +26,9 @@
   <div class="pix-hero-banner">
     {% if portal.current_tab and portal.current_tab == "home" %}
       <section class="pix-hero-banner__search-bar">
-        <div class="hc-search">
-          <h2 class="heading hide-in-mobile">Bonjour. Pouvons-nous vous aider ?</h2>
-          <div class="hc-search-c">
-            {% snippet search_form %}
-          </div>
+        <div class="pix-hero-banner-search-bar">
+          <h2 class="pix-hero-banner-search-bar__title">Bonjour. Pouvons-nous vous aider ?</h2>
+          <div class="pix-hero-banner-search-bar__input">{% snippet search_form %}</div>
         </div>
       </section>
     {% elsif portal.current_tab == "solutions" %}

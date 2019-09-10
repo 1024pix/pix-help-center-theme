@@ -1,0 +1,39 @@
+.pix-hero-banner-search-bar {
+
+  &__title {
+    font-size: 34px;
+    font-weight: 600;
+    line-height: 62px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+  }
+
+  &__input {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 9px 14px 0px rgba(0, 0, 0, 0.1);
+    border: 0px;
+    padding: 10px;
+    line-height: 22px;
+    font-size: 17.1px;
+    color: #2C2D30;
+
+    &>.hc-search-form {
+
+      &>.hc-search-input {
+        float: right;
+
+        &>input .special {
+          padding: 0;
+          font-size: 1rem;
+        }
+      }
+
+      &>.hc-search-button {
+        float: left;
+      }
+    }
+
+  }
+}
