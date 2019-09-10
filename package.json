@@ -23,7 +23,7 @@
   "homepage": "https://github.com/1024pix/pix-help-center-theme#readme",
   "scripts": {
     "build": "gulp",
-    "watch": ""
+    "dev": "gulp watch"
   },
   "devDependencies": {
     "gulp": "^4.0.2",
