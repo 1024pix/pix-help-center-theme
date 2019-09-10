@@ -5,6 +5,7 @@
 /* Layout */
 @import 'layout/app-brand';
 @import 'layout/app-header';
+@import 'layout/app-footer';
 
 /*  Components */
 @import 'components/hero-banner-search-bar';
@@ -144,10 +145,6 @@
   width: 1024px;
   margin-right: auto;
   margin-left: auto;
-
-  @media (min-width: 700px) {
-    width: 70%;
-  }
 }
 
 .pix-page {

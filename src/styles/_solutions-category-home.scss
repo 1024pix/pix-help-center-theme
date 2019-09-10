@@ -23,6 +23,10 @@
     padding-bottom: 45px;
     border-bottom: 1px solid #e3e3e3;
     padding-top: 35px;
+
+    &:last-child {
+      border: none;
+    }
   }
 }
 
@@ -34,5 +38,9 @@
   page-break-inside: avoid;
   break-inside: avoid;
   margin-left: 28px;
-  list-style: disc;
+  color: #89898B;
+
+  & > a {
+    color: #3D68FF;
+  }
 }

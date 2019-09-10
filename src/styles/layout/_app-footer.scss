@@ -1,0 +1,58 @@
+.pix-app-footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #f5f5f5;
+  padding: 15px;
+  margin-top: 20px;
+
+  &__logo {
+    background-image: url(https://pix.fr/images/pix-logo.svg);
+    width: 61px;
+    height: 50px;
+    background-size: 61px 50px;
+  }
+
+  &__nav {
+    & > a {
+      margin: 0 10px;
+      font-weight: 600;
+
+      &.pix-app-footer-nav__icon {
+        margin-right: 0;
+        margin-left: 5px;
+      }
+    }
+  }
+}
+
+.pix-app-footer-nav {
+  &__icon {
+    background-color: #3D68FF;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    border-radius: 3px;
+    transition: all ease-in .2s;
+    display: inline-block;
+
+    &:hover {
+      background-color: #3257D9;
+      transition: all ease-out .25s;
+    }
+
+    &--facebook {
+      background-image: url(https://pix.fr/images/icn-facebook.svg);
+    }
+
+    &--twitter {
+      background-image: url(https://pix.fr/images/icn-twitter.svg);
+    }
+
+    &--linkedin {
+      background-image: url(https://pix.fr/images/icn-linkedin.svg);
+    }
+  }
+}
