@@ -3,12 +3,12 @@
         <!--    <h2 class="heading">{% translate portal.knowledge_base %}</h2>-->
         {% for category in portal.solution_categories %}
             {% if category.folders_count > 0 %}
-                <a class="pix-section-card" href="{{category.url}}" id="{{ category.name | downcase | replace: " ", "-" }}">
-                    <div class="pix-section-card__icon pix-section-card__icon--{{ category.name | downcase | replace: " ", "-" }}"></div>
-                    <div class="pix-section-card__title">
+                <a class="pix-solution-card" href="{{category.url}}">
+                    <div class="pix-solution-card__icon pix-solution-card__icon--{{ category.id }}"></div>
+                    <div class="pix-solution-card__title">
                         {{ category.name }}
                     </div>
-                    <div class="pix-section-card__description">
+                    <div class="pix-solution-card__description">
                         {{ category.description }}
                     </div>
                 </a>

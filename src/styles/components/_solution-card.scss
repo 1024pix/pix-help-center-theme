@@ -1,0 +1,72 @@
+.pix-solution-card {
+  padding: 20px;
+  width: 33.0%;
+  display: inline-block;
+  vertical-align: top;
+  background-color: #ffffff;
+  min-height: 300px;
+  min-width: 300px;
+  text-align: center;
+  transition: all 170ms;
+  z-index: 1;
+
+  &__title {
+    color: #1d1c1d;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 30px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  &__icon {
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+
+    /* Premier pas */
+    &--15000003793{
+      background-image: url(https://theme.zdassets.com/theme_assets/138842/4927259a6605b2f3ead76b71031d4b30c826d1f5.png);
+    }
+
+    /* Comptes & données personnelles */
+    &--15000003810 {
+      background-image: url(https://theme.zdassets.com/theme_assets/138842/3649fb3e13d9efa2d070becff96c3ecb5bff74f9.png);
+    }
+
+    /* Profil de compétences numériques */
+    &--15000003814 {
+      background-image: url(https://theme.zdassets.com/theme_assets/138842/0f170a7c8baa03e0e5bc98e0845b7c73507c72ea.png);
+    }
+
+    /* Expérience d'évaluation */
+    &--15000003812 {
+      background-image: url(https://theme.zdassets.com/theme_assets/138842/50f57b79d463d253dcff3c56d08177b23585014d.png);
+    }
+
+    /* Progression autonome */
+    &--15000003813 {
+      background-image: url(https://theme.zdassets.com/theme_assets/138842/6e29a4be81c83ab62c53dd07b07a9170628f2457.png);
+    }
+
+    /* Certification */
+    &--15000003811 {
+      background-image: url(https://theme.zdassets.com/theme_assets/138842/8f6ea48517280cda5efdb46d92b786c7f2ba710b.png);
+    }
+
+  }
+
+}
+
+.pix-solution-card:hover {
+  transform: scale(1.075) rotate(0.0001deg);
+  background-color: #FFFFFF;
+  box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
+  color: #1d1c1d;
+  z-index: 2;
+}
