@@ -1,0 +1,33 @@
+.pix-app-brand {
+  display: flex;
+  align-items: center;
+
+  &__logo {
+    background-image: url(https://pix.fr/images/pix-logo.svg);
+    width: 61px;
+    height: 50px;
+    background-size: 61px 50px;
+    margin-right: 15px;
+  }
+
+  &__title {
+    color: #FFFFFF;
+    font-size: 16px;
+    line-height: 25px;
+    padding-left: 15px;
+    border-left: 1px solid white;
+
+    &:hover {
+      color: #ffffff;
+    }
+
+    &--black {
+      color: #1d1c1d;
+      border-left: 1px solid #1d1c1d;
+
+      &:hover {
+        color: #1d1c1d;
+      }
+    }
+  }
+}

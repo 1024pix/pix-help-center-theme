@@ -1,6 +1,11 @@
-@import 'banner/banner';
+@import 'hero-banner';
 @import 'solutions-category-home';
 @import 'portal-home';
+
+/* Layout */
+@import 'layout/app-brand';
+@import 'layout/app-header';
+
 
 .pix-hero-banner {
   background: #2986BE;
@@ -149,21 +154,9 @@
 
 }
 
-.pix-hero-banner-category {
-  &__title {
-    color: #FFFFFF;
-    font-size: 24px;
-  }
-
-  &__description {
-    color: #FFFFFF;
-    font-size: 18px;
-  }
-}
-
 .pix-wrapper {
   background-color: #ffffff;
-  width: 90%;
+  width: 1024px;
   margin-right: auto;
   margin-left: auto;
 
