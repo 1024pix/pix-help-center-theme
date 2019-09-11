@@ -51,7 +51,7 @@
                 {{ category.name | link_to: category.url }}
                 <ul class="pix-hero-banner-category-nav__subnav">
                   {% for folder in category.folders %}
-                    <li>{{ folder | link_to_folder_with_count }}</li>
+                    <li><a href="{{ category.url }}#{{ folder.name }}">{{ folder.name }}</a></li>
                   {% endfor %}
                 </ul>
               </li>

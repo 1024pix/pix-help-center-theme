@@ -3,9 +3,9 @@
     {% for folder in category.folders %}
       {% if folder.articles_count > 0 %}
         <section class="solution-category-home__category">
-          <div class="solution-category-home__title">
-            {{ folder | link_to_folder_with_count }}
-          </div>
+          <h2 class="solution-category-home__title" id="{{ folder.id }}">
+            {{ folder.name }}
+          </h2>
           <ul class="solution-category-home__list">
             {% for article in folder.articles %}
               <li class="solution-category-home-list__article">
