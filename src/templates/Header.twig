@@ -32,34 +32,42 @@
         </div>
       </section>
     {% elsif portal.current_tab == "solutions" %}
-      <div class="pix-hero-banner__category">
-        <h2 class="pix-hero-banner-category__title">{{ category.name | h}}</h2>
-        <p class="pix-hero-banner-category__description">{{ category.description | h}}</p>
+      {% assign categoryName = category.name %}
+      {% if portal.current_page == "article_view" %}
+        {% assign categoryName = article.category.name %}
+      {% endif %}
+
+      {% assign categoryDescription = category.description %}
+      {% if portal.current_page == "article_view" %}
+        {% assign categoryDescription = article.category.description %}
+      {% endif %}
+      <div class="pix-hero-banner__solution-resume">
+        <div class="pix-hero-banner-solution-resume">
+            <h2 class="pix-hero-banner-solution-resume__title">{{ categoryName | h}}</h2>
+            <p class="pix-hero-banner-solution-resume__description">{{ categoryDescription | h}}</p>
+        </div>
       </div>
-      <div class="pix-hero-banner__category-nav">
-        <ul>
-          {% assign categoryName = category.name %}
-          {% if portal.current_page == "article_view" %}
-            {% assign categoryName = article.category.name %}
-          {% endif %}
-          {% for category in portal.solution_categories %}
-            {% if categoryName == category.name %}
-              <li class="active">
-            {%  else %}
-              <li>
-            {%  endif %}
-                {{ category.name | link_to: category.url }}
-                <ul class="pix-hero-banner-category-nav__subnav">
-                  {% for folder in category.folders %}
-                    <li><a href="{{ category.url }}#{{ folder.name }}">{{ folder.name }}</a></li>
-                  {% endfor %}
-                </ul>
+      <div class="pix-hero-banner__solution-nav">
+        <div class="pix-hero-banner-solution-nav">
+          <ul>
+            {% for category in portal.solution_categories %}
+              {% if categoryName == category.name %}
+                <li class="active">
+              {%  else %}
+                <li>
+              {%  endif %}
+              {{ category.name | link_to: category.url }}
+              <ul class="pix-hero-banner-solution-nav__subnav">
+                {% for folder in category.folders %}
+                  <li><a href="{{ category.url }}#{{ folder.name }}">{{ folder.name }}</a></li>
+                {% endfor %}
+              </ul>
               </li>
-          {% endfor %}
-        </ul>
+            {% endfor %}
+          </ul>
+        </div>
       </div>
     {% endif %}
-
   </div>
 {% else %}
   <header class="banner">
