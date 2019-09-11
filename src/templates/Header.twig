@@ -56,13 +56,13 @@
               {%  else %}
                 <li>
               {%  endif %}
-              {{ category.name | link_to: category.url }}
-              <ul class="pix-hero-banner-solution-nav__subnav">
-                {% for folder in category.folders %}
-                  <li><a href="{{ category.url }}#{{ folder.name }}">{{ folder.name }}</a></li>
-                {% endfor %}
-              </ul>
-              </li>
+                {{ category.name | link_to: category.url }}
+                <ul class="pix-hero-banner-solution-nav__subnav">
+                  {% for folder in category.folders %}
+                    <li><a href="{{ category.url }}#{{ folder.name }}">{{ folder.name }}</a></li>
+                  {% endfor %}
+                </ul>
+                </li>
             {% endfor %}
           </ul>
         </div>
