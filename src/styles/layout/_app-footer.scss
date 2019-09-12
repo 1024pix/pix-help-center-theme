@@ -24,6 +24,15 @@
         margin-left: 5px;
       }
     }
+
+    &--column-on-mobile {
+      display: flex;
+      flex-direction: column;
+
+      @include device-is('desktop') {
+        flex-direction: row;
+      }
+    }
   }
 }
 
