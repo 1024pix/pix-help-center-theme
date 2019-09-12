@@ -63,10 +63,12 @@
 }
 
 .pix-solution-card:hover {
-  transform: scale(1.075) rotate(0.0001deg);
-  background-color: $white;
-  box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.15);
-  text-decoration: none;
-  color: $nero;
-  z-index: 2;
+    text-decoration: none;
+    color: $nero;
+
+  @include device-is('desktop') {
+    box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.15);
+    transform: scale(1.075) rotate(0.0001deg);
+    z-index: 2;
+  }
 }
