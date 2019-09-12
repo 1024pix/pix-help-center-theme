@@ -1,22 +1,38 @@
 .solution-category-home {
   width: 100%;
   background-color: $white;
+  margin-top: 54px;
+
+  @include device-is('desktop') {
+    margin: 0;
+  }
 
   &__title {
     color: $nero;
     font-size: 22px;
     line-height: 30px;
     font-weight: 600;
+    padding-left: 10px;
+
+    @include device-is('desktop') {
+      padding-left: 0;
+    }
   }
 
   &__list {
     margin: 10px 0 0;
-    -webkit-column-count: 2;
-    -moz-column-count: 2;
-    column-count: 2;
     -webkit-column-gap: 20px;
     -moz-column-gap: 20px;
     column-gap: 20px;
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+
+    @include device-is('desktop') {
+      -webkit-column-count: 2;
+      -moz-column-count: 2;
+      column-count: 2;
+    }
   }
 
   &__category {

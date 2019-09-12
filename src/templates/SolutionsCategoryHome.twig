@@ -1,20 +1,18 @@
 <section class="solution-category-home" id="solutions-category-{{ category.id }}">
-  <div class="">
-    {% for folder in category.folders %}
-      {% if folder.articles_count > 0 %}
-        <section class="solution-category-home__category">
-          <h2 class="solution-category-home__title" id="{{ folder.id }}">
-            {{ folder.name }}
-          </h2>
-          <ul class="solution-category-home__list">
-            {% for article in folder.articles %}
-              <li class="solution-category-home-list__article">
-                <a href="{{article.url}}" title="{{article.title | h}}">{{article.title |h}}</a>
-              </li>
-            {% endfor %}
-          </ul>
-        </section>
-      {% endif %}
-    {% endfor %}
-  </div>
+  {% for folder in category.folders %}
+    {% if folder.articles_count > 0 %}
+      <section class="solution-category-home__category">
+        <h2 class="solution-category-home__title" id="{{ folder.id }}">
+          {{ folder.name }}
+        </h2>
+        <ul class="solution-category-home__list">
+          {% for article in folder.articles %}
+            <li class="solution-category-home-list__article">
+              <a href="{{article.url}}" title="{{article.title | h}}">{{article.title |h}}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </section>
+    {% endif %}
+  {% endfor %}
 </section>

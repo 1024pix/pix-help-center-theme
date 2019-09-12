@@ -20,9 +20,13 @@
 
 .pix-wrapper {
   background-color: $white;
-  width: 1024px;
+  width: 100%;
   margin-right: auto;
   margin-left: auto;
+
+  @include device-is('desktop') {
+    width: 1024px;
+  }
 }
 
 .pix-page {
