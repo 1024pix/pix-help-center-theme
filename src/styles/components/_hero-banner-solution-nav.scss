@@ -1,14 +1,29 @@
 .pix-hero-banner-solution-nav {
+  display: table-cell;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  padding: 0;
+
+  @include device-is('desktop') {
+    display: block;
+    position: static;
+  }
 
   &>ul {
-    list-style: none;
-    margin: 5px 0;
-
     &>li {
-      display: inline-block;
+      display: block;
+
+      @include device-is('desktop') {
+        display: inline-block;
+      }
 
       &:hover .pix-hero-banner-solution-nav__subnav {
-        display: block;
+        display: none;
+
+        @include device-is('desktop') {
+          display: block;
+        }
       }
 
       &.active {
@@ -47,18 +62,80 @@
   }
 
   & a {
-    color: $white;
-    font-weight: bold;
-    text-decoration: none;
-    padding-left: 15px;
-    padding-right: 15px;
-    display: inline-block;
-    width: 100%;
-    line-height: 2.5rem;
-    min-height: 40px;
+    margin-bottom: 0;
+    border-radius: 0;
+    padding: 1rem 2rem;
+    background-color: #F4F7FA;
+    color: $nero;
     font-size: 1rem;
+    line-height: 1.3125rem;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+    display: block;
+
+    @include device-is('desktop') {
+      color: $white;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0 15px;
+      display: inline-block;
+      width: 100%;
+      line-height: 2.5rem;
+      min-height: 40px;
+      background: none;
+      border: none;
+    }
   }
 
+  &__icon {
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    font-weight: 300;
+    font-family: "Font Awesome 5 Pro";
+    text-align: center;
+    line-height: 40px;
+    z-index: 2;
+    transition: .5s all;
+
+    &--open {
+      transform: rotate(45deg);
+    }
+
+    &:hover {
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    @include device-is('desktop') {
+      display: none;
+    }
+
+    &:before {
+      color: $dove-gray;
+      content: "\f057";
+    }
+
+  }
+
+  &__list {
+    list-style: none;
+    margin: 5px 0;
+    height: auto;
+    overflow: hidden;
+
+    &--close {
+      height: 54px;
+
+      @include device-is('desktop') {
+        height: auto;
+      }
+    }
+  }
 
   &__subnav {
     display: none;

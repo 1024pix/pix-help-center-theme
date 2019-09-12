@@ -10,5 +10,20 @@
       <a class="pix-app-footer-nav__icon pix-app-footer-nav__icon--twitter" href="https://twitter.com/pix_officiel"></a>
       <a class="pix-app-footer-nav__icon pix-app-footer-nav__icon--linkedin" href="https://www.linkedin.com/company/gip-pix/"></a>
     </nav>
+
+    <script>
+      let isClose = true;
+      document.getElementById('nav_button').addEventListener("click", function() {
+        if (isClose) {
+          document.getElementById('nav_button').classList.remove('pix-hero-banner-solution-nav__icon--open');
+          document.getElementById('nav_list').classList.remove('pix-hero-banner-solution-nav__list--close');
+          isClose = false;
+        } else {
+          document.getElementById('nav_button').classList.add('pix-hero-banner-solution-nav__icon--open');
+          document.getElementById('nav_list').classList.add('pix-hero-banner-solution-nav__list--close');
+          isClose = true;
+        }
+      });
+    </script>
   </footer>
 {% endif %}

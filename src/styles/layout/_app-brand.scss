@@ -24,6 +24,11 @@
     &--black {
       color: $nero;
       border-left: 1px solid $nero;
+      display: none;
+
+      @include device-is('desktop') {
+        display: block;
+      }
 
       &:hover {
         color: $nero;

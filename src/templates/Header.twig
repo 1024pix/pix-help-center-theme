@@ -49,7 +49,8 @@
       </div>
       <div class="pix-hero-banner__solution-nav">
         <div class="pix-hero-banner-solution-nav">
-          <ul>
+          <ul class="pix-hero-banner-solution-nav__list pix-hero-banner-solution-nav__list--close" id="nav_list">
+            <div class="pix-hero-banner-solution-nav__icon pix-hero-banner-solution-nav__icon--open" id="nav_button"></div>
             {% for category in portal.solution_categories %}
               {% if categoryName == category.name %}
                 <li class="active">
