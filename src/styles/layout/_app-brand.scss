@@ -11,22 +11,22 @@
   }
 
   &__title {
-    color: #FFFFFF;
+    color: $white;
     font-size: 16px;
     line-height: 25px;
     padding-left: 15px;
     border-left: 1px solid white;
 
     &:hover {
-      color: #ffffff;
+      color: $white;
     }
 
     &--black {
-      color: #1d1c1d;
-      border-left: 1px solid #1d1c1d;
+      color: $nero;
+      border-left: 1px solid $nero;
 
       &:hover {
-        color: #1d1c1d;
+        color: $nero;
       }
     }
   }

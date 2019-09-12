@@ -1,3 +1,6 @@
+/* Globals */
+@import 'globals/colors';
+
 @import 'hero-banner';
 @import 'solutions-category-home';
 @import 'portal-home';
@@ -15,7 +18,7 @@
 @import 'components/solution-card';
 
 .pix-wrapper {
-  background-color: #ffffff;
+  background-color: $white;
   width: 1024px;
   margin-right: auto;
   margin-left: auto;
@@ -23,17 +26,17 @@
 
 .pix-page {
   width: 100%;
-  background-color: #ffffff;
+  background-color: $white;
 }
 
 .solution-category__title a {
-  color: #1d1c1d;
+  color: $nero;
   font-size: 24px;
   line-height: 30px;
 }
 
 .solution-article__title {
-  color: #1d1c1d;
+  color: $nero;
 }
 
 .ui-autocomplete {

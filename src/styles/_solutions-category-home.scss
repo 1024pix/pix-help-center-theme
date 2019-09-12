@@ -1,9 +1,9 @@
 .solution-category-home {
   width: 100%;
-  background-color: #ffffff;
+  background-color: $white;
 
   &__title {
-    color: #1d1c1d;
+    color: $nero;
     font-size: 22px;
     line-height: 30px;
     font-weight: 600;
@@ -22,7 +22,7 @@
   &__category {
     list-style: none;
     padding-bottom: 45px;
-    border-bottom: 1px solid #e3e3e3;
+    border-bottom: 1px solid $alto;
     padding-top: 35px;
 
     &:last-child {
@@ -39,9 +39,9 @@
   page-break-inside: avoid;
   break-inside: avoid;
   margin-left: 28px;
-  color: #89898B;
+  color: $dusty-gray;
 
   & > a {
-    color: #3D68FF;
+    color: $dodger-blue;
   }
 }

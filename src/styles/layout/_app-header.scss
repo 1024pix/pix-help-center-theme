@@ -8,14 +8,14 @@
 
   &--fixed {
     position: fixed;
-    background-color: #ffffff;
+    background-color: $white;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
     z-index: 10;
   }
 
   &__brand {
     height: 40px;
-    color: #FFFFFF;
+    color: $white;
     display: flex;
     margin-left: 15px;
   }
@@ -24,7 +24,7 @@
     width: 350px;
     position: absolute;
     right: 150px;
-    border: 2px solid #e3e3e3;
+    border: 2px solid $alto;
     border-radius: 6px;
     padding: 1px;
 
