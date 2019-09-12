@@ -1,14 +1,28 @@
 .article {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
+  padding: 10px 10px 0;
+
+  @include device-is('desktop') {
+    flex-direction: row;
+    padding: 0;
+  }
 
   &__content {
-    width: 720px;
+    width: 100%;
+
+    @include device-is('desktop') {
+      width: 720px;
+    }
   }
 
   &__navigation {
-    width: 240px;
+    width: 100%;
+
+    @include device-is('desktop') {
+      width: 240px;
+    }
   }
 }
 
@@ -43,16 +57,36 @@
 }
 
 .article-navigation {
+
+  border-top: 1px solid #dcdcdc;
+
+  @include device-is('desktop') {
+    border: none;
+  }
+
   &>#related_articles>.cs-g-c>.article-list ul li:before {
     content: none;
   }
 
   &>#related_articles>.cs-g-c>.article-list li {
     padding-left: 0;
+    list-style: disc;
+    margin-left: 20px;
+    color: $dusty-gray;
+
+    @include device-is('desktop') {
+      list-style: none;
+      margin-left: 0;
+    }
+
 
     &>.ellipsis {
       white-space: normal;
       overflow: unset;
+
+      & a {
+        color: $dodger-blue;
+      }
     }
   }
 }
