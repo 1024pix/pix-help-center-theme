@@ -16,12 +16,13 @@
               <a href="https://support.pix.fr/" class="pix-app-brand__title pix-app-brand__title--black">Centre d'assistance</a>
           </div>
       </div>
-      <div class="pix-app-header__search-bar">
-        {%  snippet search_form %}
-      </div>
+      {% if portal.current_tab != "search" %}
+        <div class="pix-app-header__search-bar">
+          {%  snippet search_form %}
+        </div>
+      {% endif %}
     </header>
   {% endif %}
-
 
   <div class="pix-hero-banner">
     {% if portal.current_tab and portal.current_tab == "home" %}
@@ -31,7 +32,7 @@
           <div class="pix-hero-banner-search-bar__input">{% snippet search_form %}</div>
         </div>
       </section>
-    {% elsif portal.current_tab == "solutions" %}
+    {% elsif portal.current_tab == "solutions" or portal.current_tab == "search" %}
       {% assign categoryName = category.name %}
       {% if portal.current_page == "article_view" %}
         {% assign categoryName = article.category.name %}
@@ -41,12 +42,23 @@
       {% if portal.current_page == "article_view" %}
         {% assign categoryDescription = article.category.description %}
       {% endif %}
-      <div class="pix-hero-banner__solution-resume">
-        <div class="pix-hero-banner-solution-resume">
-            <h2 class="pix-hero-banner-solution-resume__title">{{ categoryName | h}}</h2>
-            <p class="pix-hero-banner-solution-resume__description">{{ categoryDescription | h}}</p>
+
+      {% if portal.current_tab == "solutions" %}
+        <div class="pix-hero-banner__solution-resume">
+          <div class="pix-hero-banner-solution-resume">
+              <h2 class="pix-hero-banner-solution-resume__title">{{ categoryName | h}}</h2>
+              <p class="pix-hero-banner-solution-resume__description">{{ categoryDescription | h}}</p>
+          </div>
         </div>
-      </div>
+      {% elsif portal.current_tab == "search" %}
+        <section class="pix-hero-banner__search-bar pix-hero-banner__search-bar--little">
+          <div class="pix-hero-banner-search-bar">
+            <h2 class="pix-hero-banner-search-bar__title pix-hero-banner-search-bar__title--little pix-hero-banner-search-bar__title--left">{% translate portal.search.results_for %} "{{ search.term | escape_once }}"</h2>
+            <div class="pix-hero-banner-search-bar__input">{% snippet search_form %}</div>
+          </div>
+        </section>
+      {% endif %}
+
       <div class="pix-hero-banner__solution-nav">
         <div class="pix-hero-banner-solution-nav">
           <ul class="pix-hero-banner-solution-nav__list pix-hero-banner-solution-nav__list--close" id="nav_list">
