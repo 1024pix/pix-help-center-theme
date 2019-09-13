@@ -2,10 +2,11 @@
 @import 'globals/breakpoints';
 @import 'globals/colors';
 
+@import 'article-view';
 @import 'hero-banner';
+@import 'search-results';
 @import 'solutions-category-home';
 @import 'portal-home';
-@import 'article-view';
 
 /* Layout */
 @import 'layout/app-brand';
