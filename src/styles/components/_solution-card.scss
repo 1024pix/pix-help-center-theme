@@ -1,14 +1,15 @@
 .pix-solution-card {
   padding: 20px;
-  width: 33.0%;
   display: inline-block;
   vertical-align: top;
   background-color: $white;
   min-height: 300px;
   min-width: 300px;
   text-align: center;
-  transition: all 170ms;
   z-index: 1;
+  border-radius: 10px;
+  box-shadow: 0 7px 14px 0 rgba(12, 22, 58, 0.1), 0 3px 6px 0 rgba(0, 0, 0, 0.1);
+  transition: all 250ms cubic-bezier(.02, .01, .47, 1);
 
   &__title {
     color: $nero;
@@ -17,6 +18,11 @@
     line-height: 30px;
     margin-top: 20px;
     margin-bottom: 10px;
+  }
+
+  &__description {
+    padding: 0 40px;
+    color: $silver-chalice;
   }
 
   &__icon {
@@ -29,7 +35,7 @@
     margin-top: 30px;
 
     /* Premier pas */
-    &--15000003793{
+    &--15000003793 {
       background-image: url(http://pix-help-center.auth-27c5a6d3d35841a5914c7fb9a8e96345.storage.gra.cloud.ovh.net/images/PremierPas-ico@3x.png);
     }
 
@@ -57,18 +63,15 @@
     &--15000003811 {
       background-image: url(http://pix-help-center.auth-27c5a6d3d35841a5914c7fb9a8e96345.storage.gra.cloud.ovh.net/images/Certification-ico@3x.png);
     }
-
   }
-
 }
 
 .pix-solution-card:hover {
-    text-decoration: none;
-    color: $nero;
+  text-decoration: none;
+  color: $nero;
+  box-shadow: 0 14px 24px 0 rgba(12, 22, 58, .2), 0 3px 6px 0 rgba(0, 0, 0, .2);
+  transform: translate3D(0, -20px, 0);
 
   @include device-is('desktop') {
-    box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.15);
-    transform: scale(1.075) rotate(0.0001deg);
-    z-index: 2;
   }
 }
