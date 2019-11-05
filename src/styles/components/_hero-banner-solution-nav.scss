@@ -129,6 +129,10 @@
     height: auto;
     overflow: hidden;
 
+    &:first-child {
+      margin-top: 0;
+    }
+
     &--close {
       height: 54px;
 
