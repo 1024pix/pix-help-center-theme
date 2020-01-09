@@ -22,8 +22,9 @@
   },
   "homepage": "https://github.com/1024pix/pix-help-center-theme#readme",
   "scripts": {
-    "build": "gulp",
-    "dev": "gulp watch"
+    "build": "gulp && npm run release:prepare",
+    "dev": "gulp watch",
+    "release:prepare": "cat tmp/css/app.css | pbcopy"
   },
   "devDependencies": {
     "gulp": "^4.0.2",
