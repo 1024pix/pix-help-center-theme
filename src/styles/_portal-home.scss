@@ -6,6 +6,10 @@
   grid-auto-rows: minmax(100px, auto);
   margin: 40px auto;
 
+  @include device-is('tablet') {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   @include device-is('desktop') {
     width: 1024px;
     grid-template-columns: repeat(3, 1fr);
