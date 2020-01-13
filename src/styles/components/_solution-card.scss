@@ -1,14 +1,11 @@
 .pix-solution-card {
-  @include device-is('mobile-small') {
-    min-height: 280px;
-    min-width: 280px;
-  }
-  padding: 20px;
+  margin: 20px;
+  width: 25%;
   display: inline-block;
   vertical-align: top;
   background-color: $white;
-  min-height: 300px;
-  min-width: 300px;
+  min-height: 280px;
+  min-width: 280px;
   text-align: center;
   z-index: 1;
   border-radius: 10px;
