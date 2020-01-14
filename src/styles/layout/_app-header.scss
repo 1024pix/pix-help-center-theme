@@ -33,7 +33,12 @@
       right: 150px;
     }
 
-    &>.hc-search-form > .hc-search-input input, .hc-search-button .btn {
+    @include device-is('mobile-small') {
+      width: 280px;
+    }
+
+    & > .hc-search-form > .hc-search-input input,
+    .hc-search-button .btn {
       height: 35px;
     }
   }

@@ -1,5 +1,7 @@
 $breakpoints: (
-        'desktop': (min-width: 768px),
+        'mobile-small': (max-width: 320px),
+        'tablet': (min-width: 768px),
+        'desktop': (min-width: 980px),
 ) !default;
 
 @mixin device-is($breakpoint) {

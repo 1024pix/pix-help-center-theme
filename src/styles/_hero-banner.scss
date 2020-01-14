@@ -1,7 +1,6 @@
 .pix-hero-banner {
-
   background-size: cover;
-  background: #2986BE $blue-purple-gradient center bottom;
+  background: #2986be $blue-purple-gradient center bottom;
   justify-content: center;
   padding-top: 65px;
   min-height: 60px;
@@ -16,6 +15,10 @@
 
     @include device-is('desktop') {
       width: 620px;
+    }
+
+    @include device-is('mobile-small') {
+      width: 280px;
     }
 
     &--little {
@@ -43,5 +46,8 @@
       width: 1024px;
     }
 
+    @include device-is('mobile-small') {
+      width: 280px;
+    }
   }
 }
