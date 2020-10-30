@@ -8,7 +8,6 @@
   margin-top: 20px;
 
   &__logo {
-    background-image: url(https://pix.fr/images/pix-logo.svg);
     width: 61px;
     height: 50px;
     background-size: 61px 50px;
@@ -52,16 +51,5 @@
       transition: all ease-out .25s;
     }
 
-    &--facebook {
-      background-image: url(https://pix.fr/images/icn-facebook.svg);
-    }
-
-    &--twitter {
-      background-image: url(https://pix.fr/images/icn-twitter.svg);
-    }
-
-    &--linkedin {
-      background-image: url(https://pix.fr/images/icn-linkedin.svg);
-    }
   }
 }
