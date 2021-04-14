@@ -1,52 +1,51 @@
 {% if  portal.current_page != 'csat_survey' %}
-  {% if portal.current_page and portal.current_tab == "home" %}
-    <header class="">
-    	<!-- Bandeau Hot News -->
-		<!--<div class="hot-news"><center>Notre hébergeur rencontre actuellement quelques perturbations pouvant entraîner des ralentissements sur Pix, le problème est en cours de résolution, merci pour votre compréhension.</center></div>-->
-            {% if portal.current_tab and portal.current_tab == "home" %}
-
-      <div class="pix-app-header pix-app-header__brand">
-        	<div class="pix-app-brand">
-              	<a class="pix-app-brand__logo--white" href="https://pix.fr" alt="Retourner vers pix.fr" aria-label="Pix.fr"></a>
-              	<a href="https://support.pix.fr/" class="pix-app-brand__title"  style="background-color:#4a66fe">Centre d'aide</a>
-        	</div>
-        </div>
+    <header class="pix-app-header">
+        <!-- Bandeau Hot News -->
+        <!--<div class="hot-news"><center>Notre hébergeur rencontre actuellement quelques perturbations pouvant entraîner des ralentissements sur Pix, le problème est en cours de résolution, merci pour votre compréhension.</center></div>-->
+        {% if portal.current_tab == "home"  %}
+            <div class=" pix-app-header__home">
+                <img class="pix-app-header__logo" src="https://app.pix.fr/images/pix-logo-blanc.svg" alt="Pix">
+                <span class="pix-app-header__title" >
+                    {% if portal.current_language.code == "fr" %}
+                        Centre d'aide
+                    {% elsif portal.current_language.code == "en" %}
+                        Help center
+                    {% endif %}
+                </span>
+            </div>
         {% else %}
-            	<div class="pix-app-header pix-app-header__brand">
-        	<div class="pix-app-brand">
-              	<a class="pix-app-brand__logo--color" href="https://pix.fr" alt="Retourner vers pix.fr" aria-label="Pix.fr"></a>
-              	<a href="https://support.pix.fr/" class="pix-app-brand__title">Centre d'aide</a>
-        	</div>
-        </div>
-
-{% endif %}
-
+            <div class="pix-app-header__white">
+                <div class="pix-app-header__left">
+                    <img class="pix-app-header__logo" src="https://pix.fr/images/pix-logo.svg" alt="Pix">
+                    <a href="https://support.pix.org/" class="pix-app-header__title pix-app-header__title--black">
+                        {% if portal.current_language.code == "fr" %}
+                            Retour à l'accueil du centre d'aide
+                        {% elsif portal.current_language.code == "en" %}
+                            Back to Help center's home
+                        {% endif %}
+                    </a>
+                </div>
+                {% if portal.current_tab != "search" %}
+                    <div class="pix-app-header__search-bar">
+                        {%  snippet search_form %}
+                    </div>
+                {% endif %}
+            </div>
+        {% endif %}
     </header>
-  {% else %}
-    <header class="pix-app-header--fixed">
-    	<!-- Bandeau Hot News -->
-		<!--<div class="hot-news"><center>Notre hébergeur rencontre actuellement quelques perturbations pouvant entraîner des ralentissements sur Pix, le problème est en cours de résolution, merci pour votre compréhension.</center></div>-->
-      	<div class="pix-app-header">
-          	<div class="pix-app-brand">
-              <a class="pix-app-brand__logo pix-app-brand__logo--color" href="/" aria-label="Page d'accueil du centre d'aide"></a>
-              <a href="https://support.pix.fr/" class="pix-app-brand__title pix-app-brand__title--black">Centre d'aide</a>
-          	</div>
-
-      {% if portal.current_tab != "search" %}
-        <div class="pix-app-header__search-bar">
-          {%  snippet search_form %}
-        </div>
-      {% endif %}
-        </div>
-    </header>
-  {% endif %}
 
   <div class="pix-hero-banner">
     {% if portal.current_tab and portal.current_tab == "home" %}
     <main>
       <section class="pix-hero-banner__search-bar">
         <div class="pix-hero-banner-search-bar">
-          <h1 class="pix-hero-banner-search-bar__title">Comment pouvons-nous vous aider ?</h2>
+          <h1 class="pix-hero-banner-search-bar__title">
+              {% if portal.current_language.code == "fr" %}
+                  Comment pouvons-nous vous aider ?
+              {% elsif portal.current_language.code == "en" %}
+                  How can we help you ?
+              {% endif %}
+          </h1>
           <div class="pix-hero-banner-search-bar__input">{% snippet search_form %}</div>
         </div>
       </section>
