@@ -5,8 +5,10 @@
   padding: 15px 10px 14px;
   display: flex;
   justify-content: space-between;
+  background-color: $white;
 
   &--fixed {
+    width: 100%;
     position: fixed;
     background-color: $white;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
@@ -14,6 +16,7 @@
   }
 
   &__brand {
+    background-color: transparent;
     height: 40px;
     color: $white;
     display: flex;

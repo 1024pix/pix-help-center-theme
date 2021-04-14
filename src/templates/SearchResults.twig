@@ -1,16 +1,16 @@
 <section class="search-results">
-  {% if search.result_count != 0 %}
-    <ul class="search-results__list">
-      {% for result in search.results %}
-        <li class="search-results-list__items">
-          <a class="search-results-list-items__title" href="{{result.url}}">{{ result.title }}</a>
-          <p class="search-results-list-items__description">{{ result.desc }}</p>
-          <span class="search-results-list-items__category">{{ result.group }}</span>
-        </li>
-      {% endfor %}
-    </ul>
-    {{ search.pagination }}
-  {% else %}
-    <div class="lead">{% translate search.no_results_msg %}</div>
-  {% endif %}
+    {% if search.result_count != 0 %}
+        <ul class="search-results__list">
+            {% for result in search.results %}
+                <li class="search-results-list__items">
+                    <a class="search-results-list-items__title" href="{{result.url}}">{{ result.title }}</a>
+                    <p class="search-results-list-items__description">{{ result.desc }}</p>
+                    <span class="search-results-list-items__category">{{ result.group }}{{ result.group.url }}</span>
+                </li>
+            {% endfor %}
+        </ul>
+        {{ search.pagination }}
+    {% else %}
+        <div class="lead">{% translate search.no_results_msg %}</div>
+    {% endif %}
 </section>

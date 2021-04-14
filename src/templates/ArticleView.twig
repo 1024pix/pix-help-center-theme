@@ -1,3 +1,12 @@
+<script>
+  function loadThumbnailForVideos() {
+    const allVideos = document.getElementsByTagName("video");
+    for (let video of allVideos) {
+      video.setAttribute("poster", "https://images.prismic.io/pix-site/42628ea2-413c-40f7-b58b-ed66e889729a_Thumbnail.png?auto=compress,format");
+    }
+  }
+  document.addEventListener("DOMContentLoaded", loadThumbnailForVideos);
+</script>
 <section class="article" id="article-show-{{ article.id }}">
   <div class="article__content">
     <div class="article-content">
@@ -19,7 +28,7 @@
       </article>
       <hr />
       <p>{% translate portal.article.modified_on %} {{ article.modified_on | short_day_with_time }}</p>
-      <p>Vous ne trouvez pas la réponse à votre question ? Vous pouvez nous contacter directement <a href="mailto:support@pix.fr">ici</a> !</p>
+      <p class="article__new-ticket">Vous ne trouvez pas la réponse à votre question ? <a href={{portal.new_ticket_url}}>Vous pouvez nous contacter en cliquant ici.</a></p>
     </div>
   </div>
   <div class="article__navigation">
@@ -28,4 +37,3 @@
     </div>
   </div>
 </section>
-
