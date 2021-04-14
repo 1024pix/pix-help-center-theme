@@ -1,9 +1,19 @@
-.pix-section-card__container {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 20px;
+.pix-section-card {
+  &__container {
+    width: 100%;
+  }
+
+  &__list {
+    list-style: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+
+    li {
+      align-self: center;
+      display: inline;
+      padding: 0;
+      margin: 0 4px;
+    }
+  }
 }

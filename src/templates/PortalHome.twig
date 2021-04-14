@@ -1,22 +1,58 @@
+<div class="pix-hero-banner__search-bar pix-hero-banner-search-bar pix-hero-banner-search-bar__home">
+    <h1 class="pix-hero-banner-search-bar__title">
+        {% if portal.current_language.code == "fr" %}
+            Comment pouvons-nous vous aider ?
+            {% elsif portal.current_language.code == "en" %}
+            How can we help you ?
+        {% endif %}
+    </h1>
+    <section class="pix-hero-banner-search-bar__input pix-hero-banner-search-bar__input--home">
+        <h2 class="sr-only">
+            {% if portal.current_language.code == "fr" %}
+                Moteur de recherche
+                {% elsif portal.current_language.code == "en" %}
+                Search engine
+            {% endif %}
+        </h2>
+        {% snippet search_form %}
+    </section>
+</div>
 {% if portal.has_solutions %}
-    <section class="pix-section-card__container" id="solutions-index-home">
+<section class="pix-wrapper">
+    <h2 class="sr-only">
+        {% if portal.current_language.code == "fr" %}
+            Navigation principale
+            {% elsif portal.current_language.code == "en" %}
+            Main navigation
+        {% endif %}
+    </h2>
+    <nav class="pix-section-card__container" id="solutions-index-home">
+        <ul class="pix-section-card__list">
         {% for category in portal.solution_categories %}
             {% if category.folders_count > 0 %}
-                <a class="pix-solution-card" href="{{category.url}}">
-                    <div class="pix-solution-card__icon pix-solution-card__icon--{{ category.id }}"></div>
-                    <div class="pix-solution-card__title">
-                        {{ category.name }}
-                    </div>
-                    <div class="pix-solution-card__description">
-                        {{ category.description }}
-                    </div>
-                </a>
+                <li>
+                    <a class="pix-solution-card" href="{{category.url}}">
+                        <div class="pix-solution-card__icon pix-solution-card__icon--{{ category.id }}"></div>
+                        <h3 class="pix-solution-card__title">
+                            {{ category.name }}
+                        </h3>
+                        <p class="pix-solution-card__description">
+                            {{ category.description }}
+                        </p>
+                    </a>
+                </li>
             {% else %}
                 {{ portal | filler_for_solutions }}
             {% endif %}
         {% endfor %}
-    </section>
+        </ul>
+    </nav>
+</section>
 {% endif %}
-<section class="pix-section-new-ticket__container">
-    Vous ne trouvez pas la réponse à votre question ?<br><a class="pix-new-ticket" href={{portal.new_ticket_url}}>Vous pouvez nous contacter en cliquant ici.</a>
+<section class="pix-section-new-ticket__container pix-wrapper">
+    {% if portal.current_language.code == "fr" %}
+        <p>Vous ne trouvez pas la réponse à votre question ?<br><a class="pix-new-ticket" href={{portal.new_ticket_url}}>Vous pouvez nous contacter.</a></p>
+    {% elsif portal.current_language.code == "en" %}
+        <p>Can not find the answer to your question?<br><a class="pix-new-ticket" href={{portal.new_ticket_url}}>You can contact us.</a><p>
+    {% endif %}
 </section>
