@@ -35,7 +35,7 @@
     </header>
 
 {% if portal.current_tab == "solutions" or portal.current_tab == "search" %}
-    <main class="pix-hero-banner">
+    <div class="pix-hero-banner">
 
     {% assign categoryName = category.name %}
   {% if portal.current_page == "article_view" %}
@@ -50,7 +50,7 @@
   {% if portal.current_tab == "solutions" %}
     <div class="pix-hero-banner__solution-resume">
       <div class="pix-hero-banner-solution-resume">
-          <h2 class="pix-hero-banner-solution-resume__title">{{ categoryName | h}}</h2>
+          <h1 class="pix-hero-banner-solution-resume__title">{{ categoryName | h}}</h1>
           <p class="pix-hero-banner-solution-resume__description">{{ categoryDescription | h}}</p>
       </div>
     </div>
@@ -84,7 +84,7 @@
       </ul>
     </div>
   </div>
-    </main>
+    </div>
 {% endif %}
 {% else %}
   <header class="banner">

@@ -1,14 +1,5 @@
-.pix-section-new-ticket{
-  &__container {
-    text-align:center;
-    font-size:20px;
-    line-height:1.5;
-    margin-bottom:25px;
-
-    a {
-      color: $dodger-blue;
-    }
-  }
+.new_ticket {
+  margin-top: 80px;
 }
 
 #helpdesk_ticket_submit {
