@@ -14,29 +14,22 @@
     background-size: 61px 50px;
   }
 
-  &__nav {
-    & > a {
-      margin: 0 10px;
-      font-weight: 600;
+  &__social-media {
+    list-style: none;
+    display: flex;
+    padding: 0;
 
-      &.pix-app-footer-nav__icon {
-        margin-right: 0;
-        margin-left: 5px;
-      }
-    }
-
-    &--column-on-mobile {
-      display: flex;
-      flex-direction: column;
-
-      @include device-is('desktop') {
-        flex-direction: row;
-      }
+    li {
+      align-self: center;
+      display: inline;
+      padding: 0;
+      margin: 0 4px;
     }
   }
 }
 
-.pix-app-footer-nav {
+.pix-app-footer-social-media {
+
   &__icon {
     background-color: $dodger-blue;
     background-position: center;
@@ -46,22 +39,12 @@
     border-radius: 3px;
     transition: all ease-in .2s;
     display: inline-block;
+    border: 2px solid transparent;
+    text-align: center;
 
-    &:hover {
-      background-color: #3257D9;
-      transition: all ease-out .25s;
-    }
-
-    &--facebook {
-      background-image: url(https://pix.fr/images/icn-facebook.svg);
-    }
-
-    &--twitter {
-      background-image: url(https://pix.fr/images/icn-twitter.svg);
-    }
-
-    &--linkedin {
-      background-image: url(https://pix.fr/images/icn-linkedin.svg);
+    &:hover, &:focus {
+      border: 2px solid white;
+      box-shadow: 0 0 0 2px $dodger-blue;
     }
   }
 }

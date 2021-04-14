@@ -1,27 +1,10 @@
 {% if  portal.current_page != 'csat_survey' %}
   <footer class="pix-app-footer">
     <div class="pix-app-footer__logo"></div>
-    <nav class="pix-app-footer__nav pix-app-footer__nav--column-on-mobile">
-    </nav>
-    <nav class="pix-app-footer__nav">
-      <a class="pix-app-footer-nav__icon pix-app-footer-nav__icon--facebook" href="https://www.facebook.com/Pix-148371465913378/" aria-label="Facebook"></a>
-      <a class="pix-app-footer-nav__icon pix-app-footer-nav__icon--twitter" href="https://twitter.com/pix_officiel" aria-label="Twitter"></a>
-      <a class="pix-app-footer-nav__icon pix-app-footer-nav__icon--linkedin" href="https://www.linkedin.com/company/gip-pix/" aria-label="Linkedin"></a>
-    </nav>
-
-    <script>
-      let isClose = true;
-      document.getElementById('nav_button').addEventListener("click", function() {
-        if (isClose) {
-          document.getElementById('nav_button').classList.remove('pix-hero-banner-solution-nav__icon--open');
-          document.getElementById('nav_list').classList.remove('pix-hero-banner-solution-nav__list--close');
-          isClose = false;
-        } else {
-          document.getElementById('nav_button').classList.add('pix-hero-banner-solution-nav__icon--open');
-          document.getElementById('nav_list').classList.add('pix-hero-banner-solution-nav__list--close');
-          isClose = true;
-        }
-      });
-    </script>
+    <ul class="pix-app-footer__social-media">
+      <li><a class="pix-app-footer-social-media__icon" href="https://www.facebook.com/Pix-148371465913378/"><img src="https://pix.fr/images/icn-facebook.svg" alt="Page Facebook de Pix"></a></li>
+      <li><a class="pix-app-footer-social-media__icon" href="https://twitter.com/pix_officiel"><img src="https://pix.fr/images/icn-twitter.svg" alt="Page Twitter de Pix"></a></li>
+      <li><a class="pix-app-footer-social-media__icon" href="https://www.linkedin.com/company/gip-pix/"><img src="https://pix.fr/images/icn-linkedin.svg" alt="Page Linkedin de Pix"></a></li>
+    </ul>
   </footer>
 {% endif %}
