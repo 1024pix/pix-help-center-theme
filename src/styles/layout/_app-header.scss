@@ -21,7 +21,6 @@
     }
   }
 
-
   &__left {
     display: flex;
     align-items: center;
@@ -85,5 +84,18 @@
     .hc-search-button .btn {
       height: 35px;
     }
+
+    #support-search-input {
+      &::placeholder {
+        color: $tundora;
+      }
+      &:hover, &:focus, &:target, &:focus-within, &:active {
+        box-shadow: 0 8px 0 0 $yellow;
+      }
+      .mobile-icon-search {
+        color: $tundora;
+      }
+    }
+
   }
 }

@@ -2,6 +2,34 @@
   margin-top: 80px;
 }
 
+.form-portal {
+  textarea:focus,
+  input[type="text"]:focus,
+  input[type="password"]:focus,
+  input[type="datetime"]:focus,
+  input[type="datetime-local"]:focus,
+  input[type="date"]:focus,
+  input[type="month"]:focus,
+  input[type="time"]:focus,
+  input[type="week"]:focus,
+  input[type="number"]:focus,
+  input[type="email"]:focus,
+  input[type="url"]:focus,
+  input[type="search"]:focus,
+  input[type="tel"]:focus,
+  input[type="color"]:focus,
+  .uneditable-input:focus,
+  select:focus,
+  input[type="file"]:focus,
+  input[type="radio"]:focus,
+  input[type="checkbox"]:focus,
+  .radio input[type="radio"]:focus:before,
+  .checkbox input[type="checkbox"]:focus:before,
+  a:focus, a:hover, *:focus {
+    border: 2px solid $dodger-blue;
+  }
+}
+
 #helpdesk_ticket_submit {
   color: $white;
 }

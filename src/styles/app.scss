@@ -63,12 +63,3 @@
   position: absolute;
   width: 1px;
 }
-
-#support-search-input {
-  &::placeholder {
-    color: $tundora;
-  }
-  .mobile-icon-search {
-    color: $tundora;
-  }
-}
