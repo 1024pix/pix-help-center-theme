@@ -6,7 +6,8 @@
 @import 'hero-banner';
 @import 'search-results';
 @import 'solutions-category-home';
-@import 'portal-home';
+@import 'solutions-category-home';
+@import 'ticket-page';
 
 /* Layout */
 @import 'layout/app-brand';
@@ -17,6 +18,7 @@
 @import 'components/hero-banner-search-bar';
 @import 'components/hero-banner-solution-nav';
 @import 'components/hero-banner-solution-resume';
+@import 'components/hot-news';
 @import 'components/solution-card';
 
 .pix-wrapper {

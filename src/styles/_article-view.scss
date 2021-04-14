@@ -24,6 +24,15 @@
       width: 240px;
     }
   }
+
+  &__new-ticket {
+    font-size:1rem;
+    line-height:1.5;
+
+    a {
+      color: $dodger-blue;
+    }
+  }
 }
 
 .article-content {

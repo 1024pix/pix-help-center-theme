@@ -23,7 +23,7 @@
 
   &__description {
     padding: 0 40px;
-    color: $silver-chalice;
+    color: $tundora;
   }
 
   &__icon {
@@ -35,35 +35,27 @@
     margin-right: auto;
     margin-top: 30px;
 
-    /* Premier pas */
     &--15000003793 {
-      background-image: url(http://pix-help-center.auth-27c5a6d3d35841a5914c7fb9a8e96345.storage.gra.cloud.ovh.net/images/PremierPas-ico@3x.png);
-    }
-
-    /* Plateforme Pix */
+      /* Pix & moi */
+      background-image: url(https://s3-eu-central-1.amazonaws.com/euc-cdn.freshdesk.com/data/helpdesk/attachments/production/2015040994732/original/aLi_Htt0lq3sbO3ILARhSzuJXocXU2q6yQ.png?1602598218); }
     &--15000003810 {
-      background-image: url(http://pix-help-center.auth-27c5a6d3d35841a5914c7fb9a8e96345.storage.gra.cloud.ovh.net/images/PlateformPix-ico@3x.png);
-    }
-
-    /* Gestion de compte */
+      /* Utiliser Pix */
+      background-image: url(https://s3-eu-central-1.amazonaws.com/euc-cdn.freshdesk.com/data/helpdesk/attachments/production/2015040994713/original/d6cJrJtD07DffgXuBXp85QtUEa2YFNk2JQ.png?1602598206); }
     &--15000003814 {
-      background-image: url(http://pix-help-center.auth-27c5a6d3d35841a5914c7fb9a8e96345.storage.gra.cloud.ovh.net/images/GestionDeCompte-ico@3x.png);
-    }
-
-    /* Enseignement */
+      /* La certification */
+      background-image: url(https://s3-eu-central-1.amazonaws.com/euc-cdn.freshdesk.com/data/helpdesk/attachments/production/2015040994635/original/6VsG6ywC1WaqXt2F1B1A1UUHJPwXTomcEw.png?1602598173); }
     &--15000003812 {
-      background-image: url(http://pix-help-center.auth-27c5a6d3d35841a5914c7fb9a8e96345.storage.gra.cloud.ovh.net/images/Enseignement-ico@3x.png);
-    }
-
-    /* Pix Pro */
+      /* Enseignement scolaire */
+      background-image: url(https://s3-eu-central-1.amazonaws.com/euc-cdn.freshdesk.com/data/helpdesk/attachments/production/2015040994604/original/MpFbF_qAUwxUfD_cGZVm4mfDLnt9fdNbSA.png?1602598161); }
     &--15000003813 {
-      background-image: url(http://pix-help-center.auth-27c5a6d3d35841a5914c7fb9a8e96345.storage.gra.cloud.ovh.net/images/PixPro-ico@3x.png);
-    }
-
-    /* Certification */
+      /* Enseignement supérieur */
+      background-image: url(https://s3-eu-central-1.amazonaws.com/euc-cdn.freshdesk.com/data/helpdesk/attachments/production/2015040994640/original/FNGhyNladcvzu4A51bgoHqSjF9lntpKuCA.png?1602598180); }
     &--15000003811 {
-      background-image: url(http://pix-help-center.auth-27c5a6d3d35841a5914c7fb9a8e96345.storage.gra.cloud.ovh.net/images/Certification-ico@3x.png);
-    }
+      /* Médiation Numérique */
+      background-image: url(https://s3-eu-central-1.amazonaws.com/euc-cdn.freshdesk.com/data/helpdesk/attachments/production/2015040994584/original/ittVQqQ4gZbRmxV-rmgc4VhIGVXz4qloAw.png?1602598152); }
+    &--15000004362 {
+      /* Pix Pro */
+      background-image: url(https://s3-eu-central-1.amazonaws.com/euc-cdn.freshdesk.com/data/helpdesk/attachments/production/2015050320650/original/ggQLqlS1nkiNX5uOCe2SQgiUCkG9S3vtlQ.png?1615804282); }
   }
 }
 
