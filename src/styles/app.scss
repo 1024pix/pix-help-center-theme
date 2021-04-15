@@ -29,6 +29,9 @@
   @include device-is('desktop') {
     width: 1024px;
   }
+  @include device-is('large-desktop') {
+    width: 1300px;
+  }
 }
 
 .pix-page {
