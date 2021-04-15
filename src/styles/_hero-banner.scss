@@ -30,7 +30,12 @@
     padding: 0;
     margin-left: auto;
     margin-right: auto;
-    width: 1024px;
+    @include device-is('desktop') {
+      width: 1024px;
+    }
+    @include device-is('large-desktop') {
+      width: 1300px;
+    }
     font-size: 0;
   }
 
@@ -45,7 +50,10 @@
     @include device-is('desktop') {
       width: 1024px;
     }
-
+    @include device-is('large-desktop') {
+      width: 1300px;
+    }
+    
     @include device-is('mobile-small') {
       width: 280px;
     }
