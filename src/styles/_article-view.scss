@@ -40,6 +40,14 @@
     display: none;
   }
 
+  a {
+    color: $dodger-blue;
+    &:focus, &:hover {
+      text-decoration: underline;
+      background-color: $transparent-yellow;
+    }
+  }
+
   &>.breadcrumb a {
     &:before {
       content: ">";
