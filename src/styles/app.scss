@@ -10,7 +10,6 @@
 @import 'ticket-page';
 
 /* Layout */
-@import 'layout/app-brand';
 @import 'layout/app-header';
 @import 'layout/app-footer';
 
@@ -53,4 +52,14 @@
   @include device-is('desktop') {
     max-width: 500px;
   }
+}
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }

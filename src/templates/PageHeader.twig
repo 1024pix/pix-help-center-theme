@@ -1,106 +1,91 @@
 {% if  portal.current_page != 'csat_survey' %}
-  {% if portal.current_page and portal.current_tab == "home" %}
-    <header class="">
-    	<!-- Bandeau Hot News -->
-		<!--<div class="hot-news"><center>Notre hébergeur rencontre actuellement quelques perturbations pouvant entraîner des ralentissements sur Pix, le problème est en cours de résolution, merci pour votre compréhension.</center></div>-->
-            {% if portal.current_tab and portal.current_tab == "home" %}
-
-      <div class="pix-app-header pix-app-header__brand">
-        	<div class="pix-app-brand">
-              	<a class="pix-app-brand__logo--white" href="https://pix.fr" alt="Retourner vers pix.fr" aria-label="Pix.fr"></a>
-              	<a href="https://support.pix.fr/" class="pix-app-brand__title"  style="background-color:#4a66fe">Centre d'aide</a>
-        	</div>
-        </div>
+    <header class="pix-app-header">
+        <!-- Bandeau Hot News -->
+        <!--<div class="hot-news"><center>Notre hébergeur rencontre actuellement quelques perturbations pouvant entraîner des ralentissements sur Pix, le problème est en cours de résolution, merci pour votre compréhension.</center></div>-->
+        {% if portal.current_tab == "home"  %}
+            <div class=" pix-app-header__home">
+                <img class="pix-app-header__logo" src="https://app.pix.fr/images/pix-logo-blanc.svg" alt="Pix">
+                <span class="pix-app-header__title" >
+                    {% if portal.current_language.code == "fr" %}
+                        Centre d'aide
+                    {% elsif portal.current_language.code == "en" %}
+                        Help center
+                    {% endif %}
+                </span>
+            </div>
         {% else %}
-            	<div class="pix-app-header pix-app-header__brand">
-        	<div class="pix-app-brand">
-              	<a class="pix-app-brand__logo--color" href="https://pix.fr" alt="Retourner vers pix.fr" aria-label="Pix.fr"></a>
-              	<a href="https://support.pix.fr/" class="pix-app-brand__title">Centre d'aide</a>
-        	</div>
-        </div>
-
-{% endif %}
-
+            <div class="pix-app-header__white">
+                <div class="pix-app-header__left">
+                    <img class="pix-app-header__logo" src="https://pix.fr/images/pix-logo.svg" alt="Pix">
+                    <a href="https://support.pix.org/" class="pix-app-header__title pix-app-header__title--black">
+                        {% if portal.current_language.code == "fr" %}
+                            Retour à l'accueil du centre d'aide
+                        {% elsif portal.current_language.code == "en" %}
+                            Back to Help center's home
+                        {% endif %}
+                    </a>
+                </div>
+                {% if portal.current_tab != "search" %}
+                    <div class="pix-app-header__search-bar">
+                        {%  snippet search_form %}
+                    </div>
+                {% endif %}
+            </div>
+        {% endif %}
     </header>
-  {% else %}
-    <header class="pix-app-header--fixed">
-    	<!-- Bandeau Hot News -->
-		<!--<div class="hot-news"><center>Notre hébergeur rencontre actuellement quelques perturbations pouvant entraîner des ralentissements sur Pix, le problème est en cours de résolution, merci pour votre compréhension.</center></div>-->
-      	<div class="pix-app-header">
-          	<div class="pix-app-brand">
-              <a class="pix-app-brand__logo pix-app-brand__logo--color" href="/" aria-label="Page d'accueil du centre d'aide"></a>
-              <a href="https://support.pix.fr/" class="pix-app-brand__title pix-app-brand__title--black">Centre d'aide</a>
-          	</div>
 
-      {% if portal.current_tab != "search" %}
-        <div class="pix-app-header__search-bar">
-          {%  snippet search_form %}
-        </div>
-      {% endif %}
-        </div>
-    </header>
+{% if portal.current_tab == "solutions" or portal.current_tab == "search" %}
+    <div class="pix-hero-banner">
+
+    {% assign categoryName = category.name %}
+  {% if portal.current_page == "article_view" %}
+    {% assign categoryName = article.category.name %}
   {% endif %}
 
-  <div class="pix-hero-banner">
-    {% if portal.current_tab and portal.current_tab == "home" %}
-    <main>
-      <section class="pix-hero-banner__search-bar">
-        <div class="pix-hero-banner-search-bar">
-          <h1 class="pix-hero-banner-search-bar__title">Comment pouvons-nous vous aider ?</h2>
-          <div class="pix-hero-banner-search-bar__input">{% snippet search_form %}</div>
-        </div>
-      </section>
-    {% elsif portal.current_tab == "solutions" or portal.current_tab == "search" %}
-      {% assign categoryName = category.name %}
-      {% if portal.current_page == "article_view" %}
-        {% assign categoryName = article.category.name %}
-      {% endif %}
+  {% assign categoryDescription = category.description %}
+  {% if portal.current_page == "article_view" %}
+    {% assign categoryDescription = article.category.description %}
+  {% endif %}
 
-      {% assign categoryDescription = category.description %}
-      {% if portal.current_page == "article_view" %}
-        {% assign categoryDescription = article.category.description %}
-      {% endif %}
-
-      {% if portal.current_tab == "solutions" %}
-        <div class="pix-hero-banner__solution-resume">
-          <div class="pix-hero-banner-solution-resume">
-              <h2 class="pix-hero-banner-solution-resume__title">{{ categoryName | h}}</h2>
-              <p class="pix-hero-banner-solution-resume__description">{{ categoryDescription | h}}</p>
-          </div>
-        </div>
-      {% elsif portal.current_tab == "search" %}
-        <section class="pix-hero-banner__search-bar pix-hero-banner__search-bar--little">
-          <div class="pix-hero-banner-search-bar">
-            <h2 class="pix-hero-banner-search-bar__title pix-hero-banner-search-bar__title--little pix-hero-banner-search-bar__title--left">{% translate portal.search.results_for %} "{{ search.term | escape_once }}"</h2>
-            <div class="pix-hero-banner-search-bar__input">{% snippet search_form %}</div>
-          </div>
-        </section>
-      {% endif %}
-
-      <div class="pix-hero-banner__solution-nav">
-        <div class="pix-hero-banner-solution-nav">
-          <ul class="pix-hero-banner-solution-nav__list pix-hero-banner-solution-nav__list--close" id="nav_list">
-            <div class="pix-hero-banner-solution-nav__icon pix-hero-banner-solution-nav__icon--open" id="nav_button"></div>
-            {% for category in portal.solution_categories %}
-              {% if categoryName == category.name %}
-                <li class="active">
-              {%  else %}
-                <li>
-              {%  endif %}
-                {{ category.name | link_to: category.url }}
-                <ul class="pix-hero-banner-solution-nav__subnav">
-                  {% for folder in category.folders %}
-                    <li><a href="{{ category.url }}#{{ folder.name }}">{{ folder.name }}</a></li>
-                  {% endfor %}
-                </ul>
-                </li>
-            {% endfor %}
-          </ul>
-        </div>
+  {% if portal.current_tab == "solutions" %}
+    <div class="pix-hero-banner__solution-resume">
+      <div class="pix-hero-banner-solution-resume">
+          <h1 class="pix-hero-banner-solution-resume__title">{{ categoryName | h}}</h1>
+          <p class="pix-hero-banner-solution-resume__description">{{ categoryDescription | h}}</p>
       </div>
-</main>
-    {% endif %}
+    </div>
+  {% elsif portal.current_tab == "search" %}
+    <section class="pix-hero-banner__search-bar pix-hero-banner__search-bar--little">
+      <div class="pix-hero-banner-search-bar">
+        <h2 class="pix-hero-banner-search-bar__title pix-hero-banner-search-bar__title--little pix-hero-banner-search-bar__title--left">{% translate portal.search.results_for %} "{{ search.term | escape_once }}"</h2>
+        <div class="pix-hero-banner-search-bar__input">{% snippet search_form %}</div>
+      </div>
+    </section>
+  {% endif %}
+
+  <div class="pix-hero-banner__solution-nav">
+    <div class="pix-hero-banner-solution-nav">
+      <ul class="pix-hero-banner-solution-nav__list pix-hero-banner-solution-nav__list--close" id="nav_list">
+        <div class="pix-hero-banner-solution-nav__icon pix-hero-banner-solution-nav__icon--open" id="nav_button"></div>
+        {% for category in portal.solution_categories %}
+          {% if categoryName == category.name %}
+            <li class="active">
+          {%  else %}
+            <li>
+          {%  endif %}
+            {{ category.name | link_to: category.url }}
+            <ul class="pix-hero-banner-solution-nav__subnav">
+              {% for folder in category.folders %}
+                <li><a href="{{ category.url }}#{{ folder.name }}">{{ folder.name }}</a></li>
+              {% endfor %}
+            </ul>
+            </li>
+        {% endfor %}
+      </ul>
+    </div>
   </div>
+    </div>
+{% endif %}
 {% else %}
   <header class="banner">
     <div class="banner-wrapper">
