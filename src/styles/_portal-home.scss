@@ -3,6 +3,18 @@
     width: 100%;
   }
 
+  &__title {
+    margin: 30px 0 10px 0;
+    font-size: 1.7rem;
+    font-weight: 300;
+    display: flex;
+
+    img {
+      width: 30px;
+      margin: 0 10px;
+    }
+  }
+
   &__list {
     list-style: none;
     flex-wrap: wrap;
