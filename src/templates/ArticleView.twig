@@ -28,7 +28,11 @@
       </article>
       <hr />
       <p>{% translate portal.article.modified_on %} {{ article.modified_on | short_day_with_time }}</p>
-      <p class="article__new-ticket">Vous ne trouvez pas la réponse à votre question ? <a href={{portal.new_ticket_url}}>Vous pouvez nous contacter en cliquant ici.</a></p>
+      {% if portal.current_language.code == "fr" %}
+        <p class="article__new-ticket">Vous ne trouvez pas la réponse à votre question ? <a href={{portal.new_ticket_url}}>Vous pouvez nous contacter.</a></p>
+      {% elsif portal.current_language.code == "en" %}
+        <p class="article__new-ticket">Can not find the answer to your question? <a href={{portal.new_ticket_url}}>You can contact us.</a><p>
+      {% endif %}
     </div>
   </div>
   <div class="article__navigation">
