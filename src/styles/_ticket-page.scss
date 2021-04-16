@@ -3,6 +3,22 @@
 }
 
 .form-portal {
+
+  input[type="checkbox"]:before {
+    top: 0;
+    &:focus, &:hover {
+      border: 2px solid $dodger-blue;
+    }
+  }
+  #attachment-type .add_attachment {
+    overflow: visible;
+  }
+  #attachment-type .hidden_upload input[type="file"] {
+    opacity: 1;
+    top: 0;
+    width: 100%;
+  }
+
   textarea:focus,
   input[type="text"]:focus,
   input[type="password"]:focus,
@@ -27,6 +43,24 @@
   .checkbox input[type="checkbox"]:focus:before,
   a:focus, a:hover, *:focus {
     border: 2px solid $dodger-blue;
+  }
+
+  input[type="submit"].btn-primary {
+    border: 2px solid transparent;
+
+    &:hover, &:focus {
+      border: 2px solid white;
+      box-shadow: 0 0 0 2px $dodger-blue;
+    }
+  }
+
+  a.btn {
+    border: 2px solid transparent;
+
+    &:hover, &:focus {
+      border: 2px solid white;
+      box-shadow: 0 0 0 2px $dodger-blue;
+    }
   }
 }
 
