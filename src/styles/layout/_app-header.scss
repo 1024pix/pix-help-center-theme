@@ -6,6 +6,7 @@
   justify-content: space-between;
   align-items: center;
   top: 0;
+  flex-wrap: wrap;
 
   &__white{
     background-color: $white;
