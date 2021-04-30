@@ -9,7 +9,7 @@
                     <ul class="solution-category-home__list">
                         {% for article in folder.articles %}
                             <li class="solution-category-home-list__article">
-                                <a href="{{article.url}}" title="{{article.title | h}}">{{article.title |h}}</a>
+                                <a href="{{article.url}}">{{article.title |h}}</a>
                             </li>
                         {% endfor %}
                     </ul>
