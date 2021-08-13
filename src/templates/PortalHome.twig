@@ -50,7 +50,25 @@
             <h3 class="pix-section-card__title"><img src="https://storage.gra.cloud.ovh.net/v1/AUTH_27c5a6d3d35841a5914c7fb9a8e96345/pix-help-center/images/drapeau-fr_pix-faq.svg" alt="France">Pour les utilisateurs dans un cadre français</h3>
             <ul class="pix-section-card__list">
                 {% for category in portal.solution_categories %}
-                    {% if category.folders_count > 0 and (category.name == "Enseignement scolaire" or category.name == "Enseignement supérieur" or category.name == "Médiation numérique" or category.name == "Pix Pro")%}
+                    {% if category.folders_count > 0 and (category.name == "Enseignement scolaire" or category.name == "Enseignement supérieur" or category.name == "Médiation numérique")%}
+                        <li>
+                            <a class="pix-solution-card" href="{{category.url}}">
+                                <div class="pix-solution-card__icon pix-solution-card__icon--{{ category.id }}"></div>
+                                <h3 class="pix-solution-card__title">
+                                    {{ category.name }}
+                                </h3>
+                                <p class="pix-solution-card__description">
+                                    {{ category.description }}
+                                </p>
+                            </a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <hr />
+            <ul class="pix-section-card__list">
+                {% for category in portal.solution_categories %}
+                    {% if category.folders_count > 0 and category.name == "Pix Pro"%}
                         <li>
                             <a class="pix-solution-card" href="{{category.url}}">
                                 <div class="pix-solution-card__icon pix-solution-card__icon--{{ category.id }}"></div>
