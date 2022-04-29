@@ -16,6 +16,55 @@
         </h2>
         {% snippet search_form %}
     </section>
+{% if portal.current_language.code == "fr" %}
+      <section class="pix-hero-banner-search-bar__featured-articles">
+        <h2 class="pix-hero-banner-search-bar-featured-articles__title">Articles à ne pas manquer</h2>
+        <ol class="pix-hero-banner-search-bar-featured-articles__list">
+          <li class="pix-hero-banner-search-bar-featured-articles-list__item">
+            <a
+            	class="pix-hero-banner-search-bar-featured-articles-list-item__link"
+            	href="https://support.pix.org/fr/support/solutions/articles/15000037899">
+				Trouver un numéro de session
+            </a>
+          </li>
+          <li class="pix-hero-banner-search-bar-featured-articles-list__item">
+            <a
+            	class="pix-hero-banner-search-bar-featured-articles-list-item__link"
+            	href="https://support.pix.org/fr/support/solutions/articles/15000041114">
+				Délai de traitement d'une session de certification
+            </a>
+          </li>
+          <li class="pix-hero-banner-search-bar-featured-articles-list__item">
+            <a
+            	class="pix-hero-banner-search-bar-featured-articles-list-item__link"
+            	href="https://support.pix.org/fr/support/solutions/articles/15000039387">
+				Comprendre des résultats de certification
+            </a>
+          </li>
+          <li class="pix-hero-banner-search-bar-featured-articles-list__item">
+            <a
+            	class="pix-hero-banner-search-bar-featured-articles-list-item__link"
+            	href="https://support.pix.org/fr/support/solutions/articles/15000047885">
+				Résoudre une erreur pour rejoindre un parcours/collecte en collège/lycée
+            </a>
+          </li>
+          <li class="pix-hero-banner-search-bar-featured-articles-list__item">
+            <a
+            	class="pix-hero-banner-search-bar-featured-articles-list-item__link"
+            	href="https://support.pix.org/fr/support/solutions/articles/15000029308">
+				Organiser une certification en collège/lycée
+            </a>
+          </li>
+          <li class="pix-hero-banner-search-bar-featured-articles-list__item">
+            <a
+            	class="pix-hero-banner-search-bar-featured-articles-list-item__link"
+            	href="https://support.pix.org/fr/support/solutions/articles/15000047880">
+				Résoudre une erreur pour rejoindre une session de certification en collège/lycée
+            </a>
+          </li>
+        </ol>
+      </section>
+    {% endif %}
 </div>
 {% if portal.has_solutions %}
 <section class="pix-wrapper">
