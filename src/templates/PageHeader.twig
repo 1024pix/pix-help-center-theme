@@ -10,15 +10,28 @@
     </div>-->
     {% endif %}
     {% if portal.current_tab == "home"  %}
-        <div class=" pix-app-header__home">
+        <div class="pix-app-header__home">
+          <div>
             <img class="pix-app-header__logo" src="https://s3-eu-central-1.amazonaws.com/euc-cdn.freshdesk.com/data/helpdesk/attachments/production/2015052769521/original/S2_GH7ODoFoBKtiqf_COQdTvGBpZdVQ4Vg.png?1619440972" alt="Pix">
-            <span class="pix-app-header__title" >
+            <span class="pix-app-header__title">
                 {% if portal.current_language.code == "fr" %}
                     Centre d'aide
                 {% elsif portal.current_language.code == "en" %}
                     Help centre
                 {% endif %}
             </span>
+		  </div>
+          <span class="pix-app-header__language-switcher">
+            {% if portal.current_language.code == "fr" %}
+            <a href="/en/support/home" class="pix-app-header-language-switcher__link">
+              🇬🇧 English Help Centre
+            </a>
+            {% elsif portal.current_language.code == "en" %}
+            <a href="/fr/support/home" class="pix-app-header-language-switcher__link">
+              🇫🇷 Centre d'aide français
+            </a>
+            {% endif %}
+	      </span>
         </div>
     {% else %}
         <div class="pix-app-header__white">
