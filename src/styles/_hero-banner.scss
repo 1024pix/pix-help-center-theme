@@ -53,9 +53,44 @@
     @include device-is('large-desktop') {
       width: 1300px;
     }
-    
     @include device-is('mobile-small') {
       width: 280px;
+    }
+  }
+}
+
+.pix-hero-banner-search-bar {
+  &__featured-articles {
+    color: $white;
+    margin-top: 32px;
+  }
+}
+
+.pix-hero-banner-search-bar-featured-articles {
+  &__title {
+    margin-bottom: 16px;
+  }
+
+  &__list {
+    list-style-type: none;
+  }
+}
+
+.pix-hero-banner-search-bar-featured-articles-list {
+  &__item {
+    padding: 4px;
+  }
+}
+
+.pix-hero-banner-search-bar-featured-articles-list-item {
+  &__link {
+    font-size: 1.2rem;
+    text-decoration: underline;
+    color: $white;
+    padding: 4px;
+
+    &:hover {
+      color: $alto;
     }
   }
 }
