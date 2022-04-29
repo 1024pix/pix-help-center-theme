@@ -31,6 +31,7 @@
     padding: 15px 10px 14px;
     display: flex;
     align-items: center;
+    justify-content: space-around;
     width: 100%;
   }
 
@@ -97,5 +98,17 @@
       }
     }
 
+  }
+}
+
+.pix-app-header-language-switcher {
+  &__link {
+    color: $white;
+    text-decoration: underline;
+    font-size: 1.2rem;
+
+    &:hover {
+      color: $alto;
+    }
   }
 }
