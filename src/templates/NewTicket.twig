@@ -13,4 +13,46 @@
     {% endif %}
 
     {% snippet new_ticket_form %}
+
+    <script>
+        /* /!\ Lié à la manière de Freshdesk de générer le formulaire
+        * Si celle ci évolue, les checkboxs resteront affichées et les liens resteront en textuel */
+        const ticketTypeInput = document.getElementById('helpdesk_ticket_ticket_type');
+        ticketTypeInput.addEventListener('change', displayRecommendedArticles);
+
+        function displayRecommendedArticles() {
+            waitForFreshdesk().then(() => {
+                /* /!\ Lié à la manière de Freshdesk de générer le formulaire
+                * Si celle ci évolue, les checkboxs resteront affichées et les liens resteront en textuel */
+                const articleLinkInputs = document.querySelectorAll('[id*="lienarticle"]');
+                for (let articleLinkInput of articleLinkInputs) {
+                    const articleLinkInputParent = articleLinkInput.parentNode.parentNode;
+                    const articleMarkdownLink = articleLinkInputParent.textContent.trim();
+
+                    articleLinkInputParent.innerHTML = buildMarkdownLinkIfNeeded(articleMarkdownLink);
+                }
+            });
+        }
+
+        /* Prend en entrée du texte ou des liens Markdown */
+        function buildMarkdownLinkIfNeeded(markdownLink) {
+            const regex = /^\[(.+)\]\((.+)\)$/
+            if (!regex.match(markdownLink)) {
+                /* Retourne le texte d'entrée si pas de lien détecté */
+                return markdownLink;
+            }
+            const [_, text, url] = regex.exec(markdownLink);
+
+            /* Transforme le texte en hyperlien qui s'ouvre dans un nouvel onglet si lien reconnu */
+            return `<a href="${url}" target="_blank" rel="noopener noreferrer">${text}</a>`;
+        }
+
+        /* Freshdesk ajoute son propre listener sur les champs imbriqués,
+         * on attend qu'ils aient ajouté les champs conditionnel pour appliquer nos transformations */
+        function waitForFreshdesk() {
+            return new Promise(function (resolve, reject) {
+                setTimeout(resolve, 0);
+            });
+        }
+    </script>
 </main>
