@@ -43,6 +43,11 @@
   .checkbox input[type="checkbox"]:focus:before,
   a:focus, a:hover, *:focus {
     border: 2px solid $dodger-blue;
+
+  }
+
+  a {
+    color:$dodger-blue;
   }
 
   input[type="submit"].btn-primary {
@@ -56,6 +61,7 @@
 
   a.btn {
     border: 2px solid transparent;
+    color: $nero;
 
     &:hover, &:focus {
       border: 2px solid white;

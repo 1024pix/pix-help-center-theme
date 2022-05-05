@@ -15,36 +15,132 @@
     {% snippet new_ticket_form %}
 
     <script>
+        /* La liste des articles recommandés selon le type de profil.
+         * On se base sur le libellé du type de profil pour faire apparaitre les articles recommandés.
+         * /!\ Attention à ne pas avoir de différence entre les deux. */
+        const articlesRecommandes = {
+            "Je travaille dans l'enseignement scolaire": [
+                'Avez-vous consulté ces articles d’aide ?',
+                {
+                    lien: 'https://support.pix.org/fr/support/solutions/articles/15000047885',
+                    contenu: 'Un élève n’arrive pas à accéder à son parcours',
+                },
+                {
+                    lien: 'https://support.pix.org/fr/support/solutions/articles/15000029308',
+                    contenu: 'Organiser la certification dans mon établissement',
+                },
+                {
+                    lien: 'https://support.pix.org/fr/support/solutions/articles/15000047880',
+                    contenu: 'Un élève n’arrive pas à rentrer en session de certification',
+                },
+                {
+                    lien: 'https://support.pix.org/fr/support/solutions/articles/15000041114',
+                    contenu: 'Les résultats de certification ne sont pas encore disponibles',
+                },
+            ],
+        };
+
         /* /!\ Lié à la manière de Freshdesk de générer le formulaire
-        * Si celle ci évolue, les checkboxs resteront affichées et les liens resteront en textuel */
+         * Si celle ci évolue, les articles recommandés ne s'afficheront plus
+         * La section peut aussi se retrouver à un autre endroit */
         const ticketTypeInput = document.getElementById('helpdesk_ticket_ticket_type');
-        ticketTypeInput.addEventListener('change', displayRecommendedArticles);
+        const RECOMMENDED_ARTICLES_CLASS = 'pix-recommanded-articles';
+
+        try {
+            ticketTypeInput.addEventListener('change', displayRecommendedArticles);
+        } catch (error) {
+            displayFreshdeskError(error);
+        }
 
         function displayRecommendedArticles() {
-            waitForFreshdesk().then(() => {
-                /* /!\ Lié à la manière de Freshdesk de générer le formulaire
-                * Si celle ci évolue, les checkboxs resteront affichées et les liens resteront en textuel */
-                const articleLinkInputs = document.querySelectorAll('[id*="lienarticle"]');
-                for (let articleLinkInput of articleLinkInputs) {
-                    const articleLinkInputParent = articleLinkInput.parentNode.parentNode;
-                    const articleMarkdownLink = articleLinkInputParent.textContent.trim();
+            removeRecommandedArticleContainer();
 
-                    articleLinkInputParent.innerHTML = buildMarkdownLinkIfNeeded(articleMarkdownLink);
+            waitForFreshdesk().then(() => {
+                const ticketType = ticketTypeInput.value;
+                const articles = articlesRecommandes[ticketType];
+                if (articles) {
+                    const newRecommandedArticlesContainer = createRecommandedArticlesContainer(
+                        getRootNode(ticketTypeInput),
+                        getNextSibling(ticketTypeInput)
+                    );
+                    newRecommandedArticlesContainer.innerHTML =
+                        generateRecommandedArticlesHTMLContent(articles);
                 }
             });
         }
 
-        /* Prend en entrée du texte ou des liens Markdown */
-        function buildMarkdownLinkIfNeeded(markdownLink) {
-            const regex = /^\[(.+)\]\((.+)\)$/
-            if (!regex.match(markdownLink)) {
-                /* Retourne le texte d'entrée si pas de lien détecté */
-                return markdownLink;
+        function getRootNode(input) {
+            try {
+                const rootNode = input.parentNode.parentNode.parentNode;
+                if (!rootNode) {
+                    throw new Error();
+                }
+                return rootNode;
+            } catch (error) {
+                displayFreshdeskError(
+                    'Impossible de trouver le noeud suivant, il faut mettre à jour notre sélecteur'
+                );
             }
-            const [_, text, url] = regex.exec(markdownLink);
+        }
 
-            /* Transforme le texte en hyperlien qui s'ouvre dans un nouvel onglet si lien reconnu */
-            return `<a href="${url}" target="_blank" rel="noopener noreferrer">${text}</a>`;
+        function getNextSibling(input) {
+            try {
+                const nextSibling = ticketTypeInput.parentNode.parentNode.nextSibling;
+                if (!nextSibling) {
+                    throw new Error();
+                }
+                return nextSibling;
+            } catch (error) {
+                displayFreshdeskError(
+                    'Impossible de trouver le noeud suivant, il faut mettre à jour notre sélecteur'
+                );
+            }
+        }
+
+        function displayFreshdeskError(error) {
+            console.log("Freshdesk a changé, les articles recommandés ne peuvent plus s'afficher");
+            console.log(error);
+        }
+
+        function createRecommandedArticlesContainer(rootNode, referenceNode) {
+            const recommandedArticlesContainer = document.createElement('section');
+            recommandedArticlesContainer.classList.add(RECOMMENDED_ARTICLES_CLASS,'controls','control-group');
+
+            rootNode.insertBefore(recommandedArticlesContainer, referenceNode);
+            return recommandedArticlesContainer;
+        }
+
+        function removeRecommandedArticleContainer() {
+            const alreadyRecommandedArticlesSection = document.getElementsByClassName(
+                RECOMMENDED_ARTICLES_CLASS
+            )[0];
+            if (alreadyRecommandedArticlesSection !== undefined) {
+                alreadyRecommandedArticlesSection.parentNode.removeChild(
+                    alreadyRecommandedArticlesSection
+                );
+            }
+        }
+
+        function generateRecommandedArticlesHTMLContent(articles) {
+            return articles
+                .map((article) => {
+                    if (typeof article === 'string') {
+                        return '<p>' + article + '</p>';
+                    } else if (
+                        typeof article === 'object' &&
+                        typeof article.lien === 'string' &&
+                        typeof article.contenu === 'string'
+                    ) {
+                        return (
+                            '<p><a href="' +
+                            article.lien.trim() +
+                            '" target="_blank" rel="noopener noreferrer">' +
+                            article.contenu.trim() +
+                            '</a></p>'
+                        );
+                    }
+                })
+                .join('');
         }
 
         /* Freshdesk ajoute son propre listener sur les champs imbriqués,
@@ -53,6 +149,19 @@
             return new Promise(function (resolve, reject) {
                 setTimeout(resolve, 0);
             });
+        }
+
+        /* Prend en entrée du texte ou des liens Markdown */
+        function buildMarkdownLinkIfNeeded(markdownLink) {
+            const regex = /^\[(.+)\]\((.+)\)$/;
+            if (!regex.match(markdownLink)) {
+                /* Retourne le texte d'entrée si pas de lien détecté */
+                return markdownLink;
+            }
+            const [_, text, url] = regex.exec(markdownLink);
+
+            /* Transforme le texte en hyperlien qui s'ouvre dans un nouvel onglet si lien reconnu */
+            return `<a href="${url}" target="_blank" rel="noopener noreferrer">${text}</a>`;
         }
     </script>
 </main>
