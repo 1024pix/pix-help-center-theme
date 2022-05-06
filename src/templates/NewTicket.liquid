@@ -47,11 +47,11 @@
             displayFreshdeskError(error);
         }
 
-        function displayRecommendedArticles() {
+        function displayRecommendedArticles(event) {
             removeRecommandedArticleContainer();
 
             waitForFreshdesk().then(() => {
-                const ticketType = ticketTypeInput.value;
+                const ticketType = event.target.selectedOptions[0].text;
                 const articles = articlesRecommandes[ticketType];
                 if (articles) {
                     const newRecommandedArticlesContainer = createRecommandedArticlesContainer(
