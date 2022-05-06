@@ -1,23 +1,18 @@
 <main class="new_ticket content main">
     <h1 class="heading">
-        {% if portal.current_language.code == "fr" %}
-            Envoyer une demande
-        {% elsif portal.current_language.code == "en" %}
-            Send us a message
-        {% endif %}
+        {% if portal.current_language.code == "fr" %} Envoyer une demande {% elsif
+        portal.current_language.code == "en" %} Send us a message {% endif %}
     </h1>
-    {% if portal.current_language.code == "fr" %}
-        Les champs marqués d'un * sont obligatoires.
-    {% elsif portal.current_language.code == "en" %}
-        The fields marked * are required.
-    {% endif %}
-
-    {% snippet new_ticket_form %}
+    {% if portal.current_language.code == "fr" %} Les champs marqués d'un * sont obligatoires. {%
+    elsif portal.current_language.code == "en" %} The fields marked * are required. {% endif %} {%
+    snippet new_ticket_form %}
 
     <script>
         /* La liste des articles recommandés selon le type de profil.
          * On se base sur le libellé du type de profil pour faire apparaitre les articles recommandés.
-         * /!\ Attention à ne pas avoir de différence entre les deux. */
+         * /!\ Attention à ne pas avoir de différence entre les deux.
+         *
+         * Pour conserver le formattage utiliser https://beautifier.io/ */
         const articlesRecommandes = {
             "Je travaille dans l'enseignement scolaire": [
                 'Avez-vous consulté ces articles d’aide ?',
@@ -104,7 +99,11 @@
 
         function createRecommandedArticlesContainer(rootNode, referenceNode) {
             const recommandedArticlesContainer = document.createElement('section');
-            recommandedArticlesContainer.classList.add(RECOMMENDED_ARTICLES_CLASS,'controls','control-group');
+            recommandedArticlesContainer.classList.add(
+                RECOMMENDED_ARTICLES_CLASS,
+                'controls',
+                'control-group'
+            );
 
             rootNode.insertBefore(recommandedArticlesContainer, referenceNode);
             return recommandedArticlesContainer;
