@@ -150,18 +150,5 @@
                 setTimeout(resolve, 0);
             });
         }
-
-        /* Prend en entrée du texte ou des liens Markdown */
-        function buildMarkdownLinkIfNeeded(markdownLink) {
-            const regex = /^\[(.+)\]\((.+)\)$/;
-            if (!regex.match(markdownLink)) {
-                /* Retourne le texte d'entrée si pas de lien détecté */
-                return markdownLink;
-            }
-            const [_, text, url] = regex.exec(markdownLink);
-
-            /* Transforme le texte en hyperlien qui s'ouvre dans un nouvel onglet si lien reconnu */
-            return `<a href="${url}" target="_blank" rel="noopener noreferrer">${text}</a>`;
-        }
     </script>
 </main>
