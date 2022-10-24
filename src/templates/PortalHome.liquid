@@ -1,187 +1,226 @@
 <div class="pix-hero-banner__search-bar pix-hero-banner-search-bar pix-hero-banner-search-bar__home">
     <h1 class="pix-hero-banner-search-bar__title">
-        {% if portal.current_language.code == "fr" %}
+        {% if portal.current_language.code == 'fr' %}
             Comment pouvons-nous vous aider ?
-        {% elsif portal.current_language.code == "en" %}
+        {% elsif portal.current_language.code == 'en' %}
             How can we help you ?
         {% endif %}
     </h1>
     <section class="pix-hero-banner-search-bar__input pix-hero-banner-search-bar__input--home">
         <h2 class="sr-only">
-            {% if portal.current_language.code == "fr" %}
+            {% if portal.current_language.code == 'fr' %}
                 Moteur de recherche
-            {% elsif portal.current_language.code == "en" %}
+            {% elsif portal.current_language.code == 'en' %}
                 Search engine
             {% endif %}
         </h2>
         {% snippet search_form %}
     </section>
-{% if portal.current_language.code == "fr" %}
-      <section class="pix-hero-banner-search-bar__featured-articles">
-        <h2 class="pix-hero-banner-search-bar-featured-articles__title">Articles à ne pas manquer</h2>
-        <ol class="pix-hero-banner-search-bar-featured-articles__list">
-          <li class="pix-hero-banner-search-bar-featured-articles-list__item">
-            <a
-            	class="pix-hero-banner-search-bar-featured-articles-list-item__link"
-            	href="https://support.pix.org/fr/support/solutions/articles/15000032333-je-dois-r%C3%A9aliser-mon-parcours-de-rentr%C3%A9e-comment-faire-">
-				Elèves : comment réaliser mon parcours de rentrée ?
-            </a>
-          </li>
-          <li class="pix-hero-banner-search-bar-featured-articles-list__item">
-            <a
-            	class="pix-hero-banner-search-bar-featured-articles-list-item__link"
-            	href="https://support.pix.org/fr/support/solutions/articles/15000030756-je-suis-enseignant-e-comment-acc%C3%A9der-%C3%A0-pix-orga-">
-				Enseignants sco : comment accéder à Pix Orga ?
-            </a>
-          </li>
-          <li class="pix-hero-banner-search-bar-featured-articles-list__item">
-            <a
-            	class="pix-hero-banner-search-bar-featured-articles-list-item__link"
-            	href="https://support.pix.org/fr/support/solutions/articles/15000030761--je-souhaite-impor[…]%C3%A8ves-dans-pix-orga-comment-faire-est-ce-n%C3%A9cessaire-">
-				Enseignants sco : comment importer les élèves ?
-            </a>
-          </li>
-          <li class="pix-hero-banner-search-bar-featured-articles-list__item">
-            <a
-            	class="pix-hero-banner-search-bar-featured-articles-list-item__link"
-            	href="https://support.pix.org/fr/support/solutions/articles/15000047885">
-				Résoudre une erreur pour rejoindre un parcours/collecte en collège/lycée
-            </a>
-          </li>
-          <li class="pix-hero-banner-search-bar-featured-articles-list__item">
-            <a
-            	class="pix-hero-banner-search-bar-featured-articles-list-item__link"
-            	href="https://support.pix.org/fr/support/solutions/articles/15000037899">
-				Trouver un numéro de session
-            </a>
-          </li>
-          <li class="pix-hero-banner-search-bar-featured-articles-list__item">
-            <a
-            	class="pix-hero-banner-search-bar-featured-articles-list-item__link"
-            	href="https://support.pix.org/fr/support/solutions/articles/15000047880">
-				Résoudre une erreur pour rejoindre une session de certification en collège/lycée
-            </a>
-          </li>
-        </ol>
-      </section>
+    {% if portal.current_language.code == 'fr' %}
+        <section class="pix-hero-banner-search-bar__featured-articles">
+            <h2 class="pix-hero-banner-search-bar-featured-articles__title">
+                Articles à ne pas manquer
+            </h2>
+            <ol class="pix-hero-banner-search-bar-featured-articles__list">
+                <li class="pix-hero-banner-search-bar-featured-articles-list__item">
+                    <a
+                        class="pix-hero-banner-search-bar-featured-articles-list-item__link"
+                        href="https://support.pix.org/fr/support/solutions/articles/15000032333-je-dois-r%C3%A9aliser-mon-parcours-de-rentr%C3%A9e-comment-faire-"
+                    >
+                        Elèves : comment réaliser mon parcours de rentrée ?
+                    </a>
+                </li>
+                <li class="pix-hero-banner-search-bar-featured-articles-list__item">
+                    <a
+                        class="pix-hero-banner-search-bar-featured-articles-list-item__link"
+                        href="https://support.pix.org/fr/support/solutions/articles/15000030756-je-suis-enseignant-e-comment-acc%C3%A9der-%C3%A0-pix-orga-"
+                    >
+                        Enseignants sco : comment accéder à Pix Orga ?
+                    </a>
+                </li>
+                <li class="pix-hero-banner-search-bar-featured-articles-list__item">
+                    <a
+                        class="pix-hero-banner-search-bar-featured-articles-list-item__link"
+                        href="https://support.pix.org/fr/support/solutions/articles/15000030761--je-souhaite-impor[…]%C3%A8ves-dans-pix-orga-comment-faire-est-ce-n%C3%A9cessaire-"
+                    >
+                        Enseignants sco : comment importer les élèves ?
+                    </a>
+                </li>
+                <li class="pix-hero-banner-search-bar-featured-articles-list__item">
+                    <a
+                        class="pix-hero-banner-search-bar-featured-articles-list-item__link"
+                        href="https://support.pix.org/fr/support/solutions/articles/15000047885"
+                    >
+                        Résoudre une erreur pour rejoindre un parcours/collecte en collège/lycée
+                    </a>
+                </li>
+                <li class="pix-hero-banner-search-bar-featured-articles-list__item">
+                    <a
+                        class="pix-hero-banner-search-bar-featured-articles-list-item__link"
+                        href="https://support.pix.org/fr/support/solutions/articles/15000037899"
+                    >
+                        Trouver un numéro de session
+                    </a>
+                </li>
+                <li class="pix-hero-banner-search-bar-featured-articles-list__item">
+                    <a
+                        class="pix-hero-banner-search-bar-featured-articles-list-item__link"
+                        href="https://support.pix.org/fr/support/solutions/articles/15000047880"
+                    >
+                        Résoudre une erreur pour rejoindre une session de certification en
+                        collège/lycée
+                    </a>
+                </li>
+            </ol>
+        </section>
     {% endif %}
 </div>
 {% if portal.has_solutions %}
-<section class="pix-wrapper">
-    <h2 class="sr-only">
-        {% if portal.current_language.code == "fr" %}
-            Navigation principale
-        {% elsif portal.current_language.code == "en" %}
-            Main navigation
-        {% endif %}
-    </h2>
-    <nav class="pix-section-card__container" id="solutions-index-home">
-        {% if portal.current_language.code == "fr" %}
-            <ul class="pix-section-card__list">
+    <section class="pix-wrapper">
+        <h2 class="sr-only">
+            {% if portal.current_language.code == 'fr' %}
+                Navigation principale
+            {% elsif portal.current_language.code == 'en' %}
+                Main navigation
+            {% endif %}
+        </h2>
+        <nav class="pix-section-card__container" id="solutions-index-home">
+            {% if portal.current_language.code == 'fr' %}
+                <ul class="pix-section-card__list">
+                    {% for category in portal.solution_categories %}
+                        {% if category.folders_count > 0 and (category.name == "Pix & moi" or category.name == "Utiliser Pix" or category.name == "La certification") %}
+                            <li>
+                                <a class="pix-solution-card" href="{{category.url}}">
+                                    <div
+                                        class="pix-solution-card__icon pix-solution-card__icon--{{ category.id }}"
+                                    ></div>
+                                    <h3 class="pix-solution-card__title">
+                                        {{ category.name }}
+                                    </h3>
+                                    <p class="pix-solution-card__description">
+                                        {{ category.description }}
+                                    </p>
+                                </a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+                <hr>
+                <h3 class="pix-section-card__title">
+                    <img
+                        src="https://storage.gra.cloud.ovh.net/v1/AUTH_27c5a6d3d35841a5914c7fb9a8e96345/pix-help-center/images/drapeau-fr_pix-faq.svg"
+                        alt="France"
 
-                {% for category in portal.solution_categories %}
-                    {% if category.folders_count > 0 and (category.name == "Pix & moi" or category.name == "Utiliser Pix" or category.name == "La certification")%}
-                        <li>
-                            <a class="pix-solution-card" href="{{category.url}}">
-                                <div class="pix-solution-card__icon pix-solution-card__icon--{{ category.id }}"></div>
-                                <h3 class="pix-solution-card__title">
-                                    {{ category.name }}
-                                </h3>
-                                <p class="pix-solution-card__description">
-                                    {{ category.description }}
-                                </p>
-                            </a>
-                        </li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-            <hr />
-            <h3 class="pix-section-card__title"><img src="https://storage.gra.cloud.ovh.net/v1/AUTH_27c5a6d3d35841a5914c7fb9a8e96345/pix-help-center/images/drapeau-fr_pix-faq.svg" alt="France">Pour les utilisateurs dans un cadre français</h3>
-            <ul class="pix-section-card__list">
-                {% for category in portal.solution_categories %}
-                    {% if category.folders_count > 0 and (category.name == "Enseignement scolaire" or category.name == "Enseignement supérieur" or category.name == "Médiation numérique")%}
-                        <li>
-                            <a class="pix-solution-card" href="{{category.url}}">
-                                <div class="pix-solution-card__icon pix-solution-card__icon--{{ category.id }}"></div>
-                                <h3 class="pix-solution-card__title">
-                                    {{ category.name }}
-                                </h3>
-                                <p class="pix-solution-card__description">
-                                    {{ category.description }}
-                                </p>
-                            </a>
-                        </li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-            <hr />
-            <h3 class="pix-section-card__title"><img src="https://storage.gra.cloud.ovh.net/v1/AUTH_27c5a6d3d35841a5914c7fb9a8e96345/pix-help-center/images/drapeau-be_pix-faq.svg" alt="Fédération Wallonie-Bruxelles">Pour les utilisateurs de la Fédération Wallonie-Bruxelles</h3>
-            <ul class="pix-section-card__list">
-                {% for category in portal.solution_categories %}
-                    {% if category.folders_count > 0 and category.name == "FWB"%}
-                        <li>
-                            <a class="pix-solution-card" href="{{category.url}}">
-                                <div class="pix-solution-card__icon pix-solution-card__icon--{{ category.id }}"></div>
-                                <h3 class="pix-solution-card__title">
-                                    {{ category.name }}
-                                </h3>
-                                <p class="pix-solution-card__description">
-                                    {{ category.description }}
-                                </p>
-                            </a>
-                        </li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-            <hr />
-            <ul class="pix-section-card__list">
-                {% for category in portal.solution_categories %}
-                    {% if category.folders_count > 0 and category.name == "Pix Pro"%}
-                        <li>
-                            <a class="pix-solution-card" href="{{category.url}}">
-                                <div class="pix-solution-card__icon pix-solution-card__icon--{{ category.id }}"></div>
-                                <h3 class="pix-solution-card__title">
-                                    {{ category.name }}
-                                </h3>
-                                <p class="pix-solution-card__description">
-                                    {{ category.description }}
-                                </p>
-                            </a>
-                        </li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-            <hr />
+                    >Pour les utilisateurs dans un cadre français
+                </h3>
+                <ul class="pix-section-card__list">
+                    {% for category in portal.solution_categories %}
+                        {% if category.folders_count > 0 and (category.name == "Enseignement scolaire" or category.name == "Enseignement supérieur" or category.name == "Médiation numérique") %}
+                            <li>
+                                <a class="pix-solution-card" href="{{category.url}}">
+                                    <div
+                                        class="pix-solution-card__icon pix-solution-card__icon--{{ category.id }}"
+                                    ></div>
+                                    <h3 class="pix-solution-card__title">
+                                        {{ category.name }}
+                                    </h3>
+                                    <p class="pix-solution-card__description">
+                                        {{ category.description }}
+                                    </p>
+                                </a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+                <hr>
+                <ul class="pix-section-card__list">
+                    {% for category in portal.solution_categories %}
+                        {% if category.folders_count > 0 and category.name == 'Pix Pro' %}
+                            <li>
+                                <a class="pix-solution-card" href="{{category.url}}">
+                                    <div
+                                        class="pix-solution-card__icon pix-solution-card__icon--{{ category.id }}"
+                                    ></div>
+                                    <h3 class="pix-solution-card__title">
+                                        {{ category.name }}
+                                    </h3>
+                                    <p class="pix-solution-card__description">
+                                        {{ category.description }}
+                                    </p>
+                                </a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+                <hr>
+                <h3 class="pix-section-card__title">
+                    <img
+                        src="https://storage.gra.cloud.ovh.net/v1/AUTH_27c5a6d3d35841a5914c7fb9a8e96345/pix-help-center/images/drapeau-be_pix-faq.svg"
+                        alt="Fédération Wallonie-Bruxelles"
 
-            {% elsif portal.current_language.code == "en" %}
-            <ul class="pix-section-card__list">
-                {% for category in portal.solution_categories %}
-                    {% if category.folders_count > 0 %}
-                        <li>
-                            <a class="pix-solution-card" href="{{category.url}}">
-                                <div class="pix-solution-card__icon pix-solution-card__icon--{{ category.id }}"></div>
-                                <h3 class="pix-solution-card__title">
-                                    {{ category.name }}
-                                </h3>
-                                <p class="pix-solution-card__description">
-                                    {{ category.description }}
-                                </p>
-                            </a>
-                        </li>
-                    {% else %}
-                        {{ portal | filler_for_solutions }}
-                    {% endif %}
-                {% endfor %}
-            </ul>
-            <hr />
-        {% endif %}
-    </nav>
-</section>
+                    >Pour les utilisateurs de la Fédération Wallonie-Bruxelles
+                </h3>
+                <ul class="pix-section-card__list">
+                    {% for category in portal.solution_categories %}
+                        {% if category.folders_count > 0 and category.name == 'FWB' %}
+                            <li>
+                                <a class="pix-solution-card" href="{{category.url}}">
+                                    <div
+                                        class="pix-solution-card__icon pix-solution-card__icon--{{ category.id }}"
+                                    ></div>
+                                    <h3 class="pix-solution-card__title">
+                                        {{ category.name }}
+                                    </h3>
+                                    <p class="pix-solution-card__description">
+                                        {{ category.description }}
+                                    </p>
+                                </a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+                <hr>
+            {% elsif portal.current_language.code == 'en' %}
+                <ul class="pix-section-card__list">
+                    {% for category in portal.solution_categories %}
+                        {% if category.folders_count > 0 %}
+                            <li>
+                                <a class="pix-solution-card" href="{{category.url}}">
+                                    <div
+                                        class="pix-solution-card__icon pix-solution-card__icon--{{ category.id }}"
+                                    ></div>
+                                    <h3 class="pix-solution-card__title">
+                                        {{ category.name }}
+                                    </h3>
+                                    <p class="pix-solution-card__description">
+                                        {{ category.description }}
+                                    </p>
+                                </a>
+                            </li>
+                        {% else %}
+                            {{ portal | filler_for_solutions }}
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+                <hr>
+            {% endif %}
+        </nav>
+    </section>
 {% endif %}
 <section class="pix-section-new-ticket__container pix-wrapper">
-    {% if portal.current_language.code == "fr" %}
-        <p>Vous ne trouvez pas la réponse à votre question ?<br><a class="pix-new-ticket" href={{portal.new_ticket_url}}>Vous pouvez nous contacter.</a></p>
-    {% elsif portal.current_language.code == "en" %}
-        <p>Can not find the answer to your question?<br><a class="pix-new-ticket" href={{portal.new_ticket_url}}>You can contact us.</a><p>
+    {% if portal.current_language.code == 'fr' %}
+        <p>
+            Vous ne trouvez pas la réponse à votre question ?<br>
+            <a
+                class="pix-new-ticket"
+                href="{{portal.new_ticket_url}}"
+                >Vous pouvez nous contacter.</a
+            >
+        </p>
+    {% elsif portal.current_language.code == 'en' %}
+        <p>
+            Can not find the answer to your question?<br>
+            <a class="pix-new-ticket" href="{{portal.new_ticket_url}}">You can contact us.</a>
+        </p>
     {% endif %}
 </section>
