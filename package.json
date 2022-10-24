@@ -1,44 +1,47 @@
 {
-  "name": "pix-help-center-theme",
-  "version": "1.0.0",
-  "description": "Pix help center theme",
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/1024pix/pix-help-center-theme.git"
-  },
-  "keywords": [
-    "Pix",
-    "Freshdesk",
-    "theme",
-    "sass",
-    "liquid",
-    "twig"
-  ],
-  "author": "Pix Team",
-  "license": "AGPL-3.0",
-  "bugs": {
-    "url": "https://github.com/1024pix/pix-help-center-theme/issues"
-  },
-  "homepage": "https://github.com/1024pix/pix-help-center-theme#readme",
-  "scripts": {
-    "build": "gulp && npm run release:prepare",
-    "dev": "gulp watch",
-    "release:prepare": "cat tmp/css/app.css | pbcopy"
-  },
-  "devDependencies": {
-    "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^8.0.0",
-    "gulp-cli": "^2.3.0",
-    "gulp-postcss": "^9.0.1",
-    "gulp-sass": "^5.1.0",
-    "http": "0.0.0",
-    "prettier": "^2.6.2",
-    "request": "^2.88.2",
-    "request-promise": "^4.2.6",
-    "sass": "^1.51.0"
-  },
-  "dependencies": {
-    "form-data": "^2.5.1"
-  }
+    "name": "pix-help-center-theme",
+    "version": "1.0.0",
+    "description": "Pix help center theme",
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/1024pix/pix-help-center-theme.git"
+    },
+    "keywords": [
+        "Pix",
+        "Freshdesk",
+        "theme",
+        "sass",
+        "liquid",
+        "twig"
+    ],
+    "author": "Pix Team",
+    "license": "AGPL-3.0",
+    "bugs": {
+        "url": "https://github.com/1024pix/pix-help-center-theme/issues"
+    },
+    "homepage": "https://github.com/1024pix/pix-help-center-theme#readme",
+    "scripts": {
+        "build": "gulp && npm run release:prepare",
+        "dev": "gulp watch",
+        "release:prepare": "cat tmp/css/app.css | pbcopy",
+        "lint": "prettier",
+        "format": "prettier --write"
+    },
+    "devDependencies": {
+        "@shopify/prettier-plugin-liquid": "^0.4.0",
+        "gulp": "^4.0.2",
+        "gulp-autoprefixer": "^8.0.0",
+        "gulp-cli": "^2.3.0",
+        "gulp-postcss": "^9.0.1",
+        "gulp-sass": "^5.1.0",
+        "http": "0.0.0",
+        "prettier": "^2.6.2",
+        "request": "^2.88.2",
+        "request-promise": "^4.2.6",
+        "sass": "^1.51.0"
+    },
+    "dependencies": {
+        "form-data": "^2.5.1"
+    }
 }
