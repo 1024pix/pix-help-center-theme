@@ -18,9 +18,7 @@
     </section>
     {% if portal.current_language.code == 'fr' %}
         <section class="pix-hero-banner-search-bar__featured-articles">
-            <h2 class="pix-hero-banner-search-bar-featured-articles__title">
-                Articles à ne pas manquer
-            </h2>
+            <h2 class="pix-hero-banner-search-bar-featured-articles__title">Articles à ne pas manquer</h2>
             <ol class="pix-hero-banner-search-bar-featured-articles__list">
                 <li class="pix-hero-banner-search-bar-featured-articles-list__item">
                     <a
@@ -67,8 +65,7 @@
                         class="pix-hero-banner-search-bar-featured-articles-list-item__link"
                         href="https://support.pix.org/fr/support/solutions/articles/15000047880"
                     >
-                        Résoudre une erreur pour rejoindre une session de certification en
-                        collège/lycée
+                        Résoudre une erreur pour rejoindre une session de certification en collège/lycée
                     </a>
                 </li>
             </ol>
@@ -88,20 +85,22 @@
             {% if portal.current_language.code == 'fr' %}
                 <ul class="pix-section-card__list">
                     {% for category in portal.solution_categories %}
-                        {% if category.folders_count > 0 and (category.name == "Pix & moi" or category.name == "Utiliser Pix" or category.name == "La certification") %}
-                            <li>
-                                <a class="pix-solution-card" href="{{category.url}}">
-                                    <div
-                                        class="pix-solution-card__icon pix-solution-card__icon--{{ category.id }}"
-                                    ></div>
-                                    <h3 class="pix-solution-card__title">
-                                        {{ category.name }}
-                                    </h3>
-                                    <p class="pix-solution-card__description">
-                                        {{ category.description }}
-                                    </p>
-                                </a>
-                            </li>
+                        {% if category.id == 15000003793 or category.id == 15000003810 or category.id == 15000003811 %}
+                            {% if category.folders_count > 0 %}
+                                <li>
+                                    <a class="pix-solution-card" href="{{category.url}}">
+                                        <div
+                                            class="pix-solution-card__icon pix-solution-card__icon--{{ category.id }}"
+                                        ></div>
+                                        <h3 class="pix-solution-card__title">
+                                            {{ category.name }}
+                                        </h3>
+                                        <p class="pix-solution-card__description">
+                                            {{ category.description }}
+                                        </p>
+                                    </a>
+                                </li>
+                            {% endif %}
                         {% endif %}
                     {% endfor %}
                 </ul>
@@ -115,40 +114,44 @@
                 </h3>
                 <ul class="pix-section-card__list">
                     {% for category in portal.solution_categories %}
-                        {% if category.folders_count > 0 and (category.name == "Enseignement scolaire" or category.name == "Enseignement supérieur" or category.name == "Médiation numérique") %}
-                            <li>
-                                <a class="pix-solution-card" href="{{category.url}}">
-                                    <div
-                                        class="pix-solution-card__icon pix-solution-card__icon--{{ category.id }}"
-                                    ></div>
-                                    <h3 class="pix-solution-card__title">
-                                        {{ category.name }}
-                                    </h3>
-                                    <p class="pix-solution-card__description">
-                                        {{ category.description }}
-                                    </p>
-                                </a>
-                            </li>
+                        {% if category.id == 15000003814 or category.id == 15000003812 or category.id == 15000004362 %}
+                            {% if category.folders_count > 0 %}
+                                <li>
+                                    <a class="pix-solution-card" href="{{category.url}}">
+                                        <div
+                                            class="pix-solution-card__icon pix-solution-card__icon--{{ category.id }}"
+                                        ></div>
+                                        <h3 class="pix-solution-card__title">
+                                            {{ category.name }}
+                                        </h3>
+                                        <p class="pix-solution-card__description">
+                                            {{ category.description }}
+                                        </p>
+                                    </a>
+                                </li>
+                            {% endif %}
                         {% endif %}
                     {% endfor %}
                 </ul>
                 <hr>
                 <ul class="pix-section-card__list">
                     {% for category in portal.solution_categories %}
-                        {% if category.folders_count > 0 and category.name == 'Pix Pro' %}
-                            <li>
-                                <a class="pix-solution-card" href="{{category.url}}">
-                                    <div
-                                        class="pix-solution-card__icon pix-solution-card__icon--{{ category.id }}"
-                                    ></div>
-                                    <h3 class="pix-solution-card__title">
-                                        {{ category.name }}
-                                    </h3>
-                                    <p class="pix-solution-card__description">
-                                        {{ category.description }}
-                                    </p>
-                                </a>
-                            </li>
+                        {% if category.id == 15000003813 %}
+                            {% if category.folders_count > 0 %}
+                                <li>
+                                    <a class="pix-solution-card" href="{{category.url}}">
+                                        <div
+                                            class="pix-solution-card__icon pix-solution-card__icon--{{ category.id }}"
+                                        ></div>
+                                        <h3 class="pix-solution-card__title">
+                                            {{ category.name }}
+                                        </h3>
+                                        <p class="pix-solution-card__description">
+                                            {{ category.description }}
+                                        </p>
+                                    </a>
+                                </li>
+                            {% endif %}
                         {% endif %}
                     {% endfor %}
                 </ul>
@@ -162,20 +165,22 @@
                 </h3>
                 <ul class="pix-section-card__list">
                     {% for category in portal.solution_categories %}
-                        {% if category.folders_count > 0 and category.name == 'FWB' %}
-                            <li>
-                                <a class="pix-solution-card" href="{{category.url}}">
-                                    <div
-                                        class="pix-solution-card__icon pix-solution-card__icon--{{ category.id }}"
-                                    ></div>
-                                    <h3 class="pix-solution-card__title">
-                                        {{ category.name }}
-                                    </h3>
-                                    <p class="pix-solution-card__description">
-                                        {{ category.description }}
-                                    </p>
-                                </a>
-                            </li>
+                        {% if category.id == 15000004613 %}
+                            {% if category.folders_count > 0 %}
+                                <li>
+                                    <a class="pix-solution-card" href="{{category.url}}">
+                                        <div
+                                            class="pix-solution-card__icon pix-solution-card__icon--{{ category.id }}"
+                                        ></div>
+                                        <h3 class="pix-solution-card__title">
+                                            {{ category.name }}
+                                        </h3>
+                                        <p class="pix-solution-card__description">
+                                            {{ category.description }}
+                                        </p>
+                                    </a>
+                                </li>
+                            {% endif %}
                         {% endif %}
                     {% endfor %}
                 </ul>
