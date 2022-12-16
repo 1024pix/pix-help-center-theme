@@ -17,6 +17,10 @@
     ],
     "author": "Pix Team",
     "license": "AGPL-3.0",
+    "engines": {
+        "node": "16",
+        "npm": ">=8.13.2 <9"
+    },
     "bugs": {
         "url": "https://github.com/1024pix/pix-help-center-theme/issues"
     },
