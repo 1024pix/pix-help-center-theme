@@ -33,7 +33,7 @@
         "format": "prettier --write"
     },
     "devDependencies": {
-        "@shopify/prettier-plugin-liquid": "^0.4.0",
+        "@shopify/prettier-plugin-liquid": "^1.0.0",
         "gulp": "^4.0.2",
         "gulp-autoprefixer": "^8.0.0",
         "gulp-cli": "^2.3.0",
