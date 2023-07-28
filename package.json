@@ -46,6 +46,6 @@
         "sass": "^1.51.0"
     },
     "dependencies": {
-        "form-data": "^2.5.1"
+        "form-data": "^3.0.0"
     }
 }
