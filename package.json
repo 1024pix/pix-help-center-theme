@@ -36,7 +36,7 @@
         "@shopify/prettier-plugin-liquid": "^0.4.0",
         "gulp": "^4.0.2",
         "gulp-autoprefixer": "^8.0.0",
-        "gulp-cli": "^2.3.0",
+        "gulp-cli": "^3.0.0",
         "gulp-postcss": "^9.0.1",
         "gulp-sass": "^5.1.0",
         "http": "0.0.0",
